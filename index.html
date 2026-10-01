@@ -18,7 +18,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d8563b007826f0d7a8924ea1f200e3fe {
+                #map_3b50224ffc681276eb11a860d8c2c667 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,9 +55,30 @@
 <body>
     
     
-    <div style="position:fixed;top:12px;left:60px;z-index:9999;background:#fff;
-      padding:12px 16px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.3);
-      font-family:Arial;font-size:14px;line-height:1.5;max-width:320px">
+    <style>
+      #painel-mapa {
+        position:fixed; top:12px; left:60px; z-index:9999; background:#fff;
+        padding:12px 16px; border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,.3);
+        font-family:Arial; font-size:14px; line-height:1.5; max-width:320px;
+        max-height:calc(100vh - 24px); overflow-y:auto; box-sizing:border-box;
+      }
+      #painel-mapa.oculto { display:none; }
+      #painel-botao {
+        position:fixed; bottom:18px; right:12px; z-index:9999; width:42px; height:42px;
+        border-radius:50%; border:none; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.35);
+        cursor:pointer; font:bold 20px/42px Arial; text-align:center; color:#333;
+      }
+      @media (max-width: 680px) {
+        #painel-mapa {
+          left:8px; right:8px; top:8px; max-width:none; font-size:13px;
+          max-height:calc(100vh - 90px);
+        }
+      }
+    </style>
+    <button id="painel-botao" onclick="alternarPainelMapa()"
+      aria-label="Mostrar ou esconder informações do mapa"
+      title="Mostrar/esconder informações">i</button>
+    <div id="painel-mapa">
       <b style="font-size:16px">Mapa de Identidade do Território</b><br>
       1 lugares &middot; 1 organizações
       &middot; 1 bairros<br>
@@ -69,18 +90,28 @@
         <summary style="cursor:pointer;font-size:13px">Ver organizações</summary>
         <div style="max-height:220px;overflow:auto;font-size:12px;margin-top:4px"><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Associação Comunitária Amigos do Estaleiro Escola (ACAES) <small>(1)</small></div></div>
       </details>
-      <small>Atualizado às 17:55</small>
+      <small>Atualizado às 17:59</small>
     </div>
+    <script>
+      function alternarPainelMapa() {
+        document.getElementById('painel-mapa').classList.toggle('oculto');
+      }
+      (function () {
+        if (window.innerWidth < 680) {
+          document.getElementById('painel-mapa').classList.add('oculto');
+        }
+      })();
+    </script>
     
     
-            <div class="folium-map" id="map_d8563b007826f0d7a8924ea1f200e3fe" ></div>
+            <div class="folium-map" id="map_3b50224ffc681276eb11a860d8c2c667" ></div>
         
 </body>
 <script>
     
     
-            var map_d8563b007826f0d7a8924ea1f200e3fe = L.map(
-                "map_d8563b007826f0d7a8924ea1f200e3fe",
+            var map_3b50224ffc681276eb11a860d8c2c667 = L.map(
+                "map_3b50224ffc681276eb11a860d8c2c667",
                 {
                     center: [-2.5490000506084867, -44.31464952328722],
                     crs: L.CRS.EPSG3857,
@@ -97,7 +128,7 @@
 
         
     
-            var tile_layer_0f84e8a6537c27310b8dbc2c8dc98507 = L.tileLayer(
+            var tile_layer_d6febffabdd1987df4e6c6dfeb3dde0d = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -114,23 +145,23 @@
             );
         
     
-            tile_layer_0f84e8a6537c27310b8dbc2c8dc98507.addTo(map_d8563b007826f0d7a8924ea1f200e3fe);
+            tile_layer_d6febffabdd1987df4e6c6dfeb3dde0d.addTo(map_3b50224ffc681276eb11a860d8c2c667);
         
     
-            var feature_group_4befc10882b86674ea1b6deab126fc6e = L.featureGroup(
+            var feature_group_fea1260b22045328398732771de90675 = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_4287dcafe37dd097e244c6d00d5f21f3 = L.marker(
+            var marker_52bf9e51813b6d681e7167a4c855f306 = L.marker(
                 [-2.5490000506084867, -44.31464952328722],
                 {
 }
-            ).addTo(feature_group_4befc10882b86674ea1b6deab126fc6e);
+            ).addTo(feature_group_fea1260b22045328398732771de90675);
         
     
-            var div_icon_57c5abad5e29a721307557db03bfb9d9 = L.divIcon({
+            var div_icon_17f44c7db9d3ba5370cedeac7bb7c951 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -138,24 +169,24 @@
 });
         
     
-        var popup_fa2bfb3b239ba1021b4953c170ab07eb = L.popup({
+        var popup_d9d4dd8ef2f40b0f72363627d25f25b0 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_69b64f413d50ffa993e94f02b571fae8 = $(`<div id="html_69b64f413d50ffa993e94f02b571fae8" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:250px'><b>Pier do estaleiro escola</b><br><img src="fotos/883935909_pier_do_estaleiro_escola.jpg" alt="" loading="lazy" style="width:100%;border-radius:4px;margin:4px 0;display:block"><br><audio controls preload="none" style="width:100%;margin:4px 0;display:block"><source src="audios/883935909_pier_do_estaleiro_escola.m4a"></audio><br><i>Turismo</i><br>Bairro: Alto da Esperança<br>Perto de: Próximo ao estaleiro escola<br><b>Importa por:</b> lazer<br><b>Desejo:</b> Que fosse mais frequentado<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação Comunitária Amigos do Estaleiro Escola (ACAES)</span></div></div>`)[0];
-                popup_fa2bfb3b239ba1021b4953c170ab07eb.setContent(html_69b64f413d50ffa993e94f02b571fae8);
+                var html_ced67d64c5531898ef5ada7a1c045fd6 = $(`<div id="html_ced67d64c5531898ef5ada7a1c045fd6" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Pier do estaleiro escola</b><br><img src="fotos/883935909_pier_do_estaleiro_escola.jpg" alt="" loading="lazy" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block"><br><audio controls preload="none" style="width:100%;margin:4px 0;display:block"><source src="audios/883935909_pier_do_estaleiro_escola.m4a"></audio><br><i>Turismo</i><br>Bairro: Alto da Esperança<br>Perto de: Próximo ao estaleiro escola<br><b>Importa por:</b> lazer<br><b>Desejo:</b> Que fosse mais frequentado<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação Comunitária Amigos do Estaleiro Escola (ACAES)</span></div></div>`)[0];
+                popup_d9d4dd8ef2f40b0f72363627d25f25b0.setContent(html_ced67d64c5531898ef5ada7a1c045fd6);
             
         
 
-        marker_4287dcafe37dd097e244c6d00d5f21f3.bindPopup(popup_fa2bfb3b239ba1021b4953c170ab07eb)
+        marker_52bf9e51813b6d681e7167a4c855f306.bindPopup(popup_d9d4dd8ef2f40b0f72363627d25f25b0)
         ;
 
         
     
     
-            marker_4287dcafe37dd097e244c6d00d5f21f3.bindTooltip(
+            marker_52bf9e51813b6d681e7167a4c855f306.bindTooltip(
                 `<div>
                      Pier do estaleiro escola — Associação Comunitária Amigos do Estaleiro Escola (ACAES)
                  </div>`,
@@ -165,49 +196,49 @@
             );
         
     
-                marker_4287dcafe37dd097e244c6d00d5f21f3.setIcon(div_icon_57c5abad5e29a721307557db03bfb9d9);
+                marker_52bf9e51813b6d681e7167a4c855f306.setIcon(div_icon_17f44c7db9d3ba5370cedeac7bb7c951);
             
     
-            feature_group_4befc10882b86674ea1b6deab126fc6e.addTo(map_d8563b007826f0d7a8924ea1f200e3fe);
+            feature_group_fea1260b22045328398732771de90675.addTo(map_3b50224ffc681276eb11a860d8c2c667);
         
     
-            var feature_group_cc9f3ca05733a0301e6c8fb328736630 = L.featureGroup(
+            var feature_group_f3a3251edf3eb4a118dcf652d1fcd4e9 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_cc9f3ca05733a0301e6c8fb328736630.addTo(map_d8563b007826f0d7a8924ea1f200e3fe);
+            feature_group_f3a3251edf3eb4a118dcf652d1fcd4e9.addTo(map_3b50224ffc681276eb11a860d8c2c667);
         
     
-            var feature_group_1702db56540046fbd27e15a1c2fdb8a1 = L.featureGroup(
+            var feature_group_702578af9a7b86b6eea1893f94230d12 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_1702db56540046fbd27e15a1c2fdb8a1.addTo(map_d8563b007826f0d7a8924ea1f200e3fe);
+            feature_group_702578af9a7b86b6eea1893f94230d12.addTo(map_3b50224ffc681276eb11a860d8c2c667);
         
     
-            var layer_control_4284e65d5f2b846a78dfe13595b971d2_layers = {
+            var layer_control_e9652bf9e7e67ad1691f2f7ede3e7f2d_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_0f84e8a6537c27310b8dbc2c8dc98507,
+                    "openstreetmap" : tile_layer_d6febffabdd1987df4e6c6dfeb3dde0d,
                 },
                 overlays :  {
-                    "\u2605 Potencialidades" : feature_group_4befc10882b86674ea1b6deab126fc6e,
-                    "! Desafios" : feature_group_cc9f3ca05733a0301e6c8fb328736630,
-                    "\u25d1 Os dois" : feature_group_1702db56540046fbd27e15a1c2fdb8a1,
+                    "\u2605 Potencialidades" : feature_group_fea1260b22045328398732771de90675,
+                    "! Desafios" : feature_group_f3a3251edf3eb4a118dcf652d1fcd4e9,
+                    "\u25d1 Os dois" : feature_group_702578af9a7b86b6eea1893f94230d12,
                 },
             };
-            let layer_control_4284e65d5f2b846a78dfe13595b971d2 = L.control.layers(
-                layer_control_4284e65d5f2b846a78dfe13595b971d2_layers.base_layers,
-                layer_control_4284e65d5f2b846a78dfe13595b971d2_layers.overlays,
+            let layer_control_e9652bf9e7e67ad1691f2f7ede3e7f2d = L.control.layers(
+                layer_control_e9652bf9e7e67ad1691f2f7ede3e7f2d_layers.base_layers,
+                layer_control_e9652bf9e7e67ad1691f2f7ede3e7f2d_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_d8563b007826f0d7a8924ea1f200e3fe);
+            ).addTo(map_3b50224ffc681276eb11a860d8c2c667);
 
         
 </script>
