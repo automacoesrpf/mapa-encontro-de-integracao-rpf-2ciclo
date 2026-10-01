@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="refresh" content="60">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d22aadfd8731f029e9650c9d7f594571 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position:fixed;top:12px;left:60px;z-index:9999;background:#fff;
+      padding:12px 16px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.3);
+      font-family:Arial;font-size:14px;line-height:1.5;max-width:320px">
+      <b style="font-size:16px">Mapa de Identidade do Território</b><br>
+      0 lugares &middot; 0 organizações
+      &middot; 0 bairros<br>
+      ★ 0 potencialidades
+      &nbsp;! 0 desafios
+      &nbsp;◑ 0 os dois<br>
+      <small>A cor identifica a organização · o símbolo, o tipo</small><br>
+      <details style="margin-top:6px">
+        <summary style="cursor:pointer;font-size:13px">Ver organizações</summary>
+        <div style="max-height:220px;overflow:auto;font-size:12px;margin-top:4px"></div>
+      </details>
+      <small>Atualizado às 17:21</small>
+    </div>
+    
+    
+            <div class="folium-map" id="map_d22aadfd8731f029e9650c9d7f594571" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d22aadfd8731f029e9650c9d7f594571 = L.map(
+                "map_d22aadfd8731f029e9650c9d7f594571",
+                {
+                    center: [-2.53, -44.3],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3465d1d1bc2cba4368c3ce98c0459ef9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3465d1d1bc2cba4368c3ce98c0459ef9.addTo(map_d22aadfd8731f029e9650c9d7f594571);
+        
+    
+            var feature_group_42022e1b4e2429d915484ca5b46f7dd4 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_42022e1b4e2429d915484ca5b46f7dd4.addTo(map_d22aadfd8731f029e9650c9d7f594571);
+        
+    
+            var feature_group_ec1d24c50dabd6c89c3af73db6969bb5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_ec1d24c50dabd6c89c3af73db6969bb5.addTo(map_d22aadfd8731f029e9650c9d7f594571);
+        
+    
+            var feature_group_9a1d7442e7af8992267ff4b11ff90442 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_9a1d7442e7af8992267ff4b11ff90442.addTo(map_d22aadfd8731f029e9650c9d7f594571);
+        
+    
+            var layer_control_4707ec48376d475bd187a3fa336257e5_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_3465d1d1bc2cba4368c3ce98c0459ef9,
+                },
+                overlays :  {
+                    "\u2605 Potencialidades" : feature_group_42022e1b4e2429d915484ca5b46f7dd4,
+                    "! Desafios" : feature_group_ec1d24c50dabd6c89c3af73db6969bb5,
+                    "\u25d1 Os dois" : feature_group_9a1d7442e7af8992267ff4b11ff90442,
+                },
+            };
+            let layer_control_4707ec48376d475bd187a3fa336257e5 = L.control.layers(
+                layer_control_4707ec48376d475bd187a3fa336257e5_layers.base_layers,
+                layer_control_4707ec48376d475bd187a3fa336257e5_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_d22aadfd8731f029e9650c9d7f594571);
+
+        
+</script>
+</html>
