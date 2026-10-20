@@ -3,7 +3,7 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="versao-dados" content="2db72f088083">
+    <meta name="versao-dados" content="a57890968093">
     <title>Mapa de Valor do Território — RPF 2º Ciclo</title>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -19,7 +19,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_3997e3bf8b872243b6beb38122ad78bc {
+                #map_825b750eeb3cd019ecfd81f8c3b8794b {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -87,9 +87,9 @@
       <small>A cor identifica a organização · o símbolo, o tipo</small><br>
       <details style="margin-top:6px">
         <summary style="cursor:pointer;font-size:13px">Ver organizações</summary>
-        <div style="max-height:220px;overflow:auto;font-size:12px;margin-top:4px"><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Associação Comunitária Amigos do Estaleiro Escola (ACAES) <small>(0)</small></div></div>
+        <div style="max-height:220px;overflow:auto;font-size:12px;margin-top:4px"></div>
       </details>
-      <small>Dados atualizados em 20/10/2026 13:39</small>
+      <small>Dados atualizados em 20/10/2026 13:47</small>
     </div>
     <script>
       function alternarPainelMapa() {
@@ -105,7 +105,7 @@
     
     <script>
       (function () {
-        var atual = "2db72f088083";
+        var atual = "a57890968093";
         setInterval(function () {
           if (document.querySelector('.leaflet-popup')) return;
           fetch(location.pathname + '?v=' + Date.now(), {cache: 'no-store'})
@@ -143,14 +143,14 @@
     </script>
     
     
-            <div class="folium-map" id="map_3997e3bf8b872243b6beb38122ad78bc" ></div>
+            <div class="folium-map" id="map_825b750eeb3cd019ecfd81f8c3b8794b" ></div>
         
 </body>
 <script>
     
     
-            var map_3997e3bf8b872243b6beb38122ad78bc = L.map(
-                "map_3997e3bf8b872243b6beb38122ad78bc",
+            var map_825b750eeb3cd019ecfd81f8c3b8794b = L.map(
+                "map_825b750eeb3cd019ecfd81f8c3b8794b",
                 {
                     center: [-2.53, -44.3],
                     crs: L.CRS.EPSG3857,
@@ -167,7 +167,7 @@
 
         
     
-            var tile_layer_dd2ab584e8a9aaf71db1e976672f37fe = L.tileLayer(
+            var tile_layer_96c26b93f5f759760996e51024b005f1 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -184,45 +184,45 @@
             );
         
     
-            tile_layer_dd2ab584e8a9aaf71db1e976672f37fe.addTo(map_3997e3bf8b872243b6beb38122ad78bc);
+            tile_layer_96c26b93f5f759760996e51024b005f1.addTo(map_825b750eeb3cd019ecfd81f8c3b8794b);
         
     
-            var feature_group_27dcd052b51c27fd44e9c2f181dc8e06 = L.featureGroup(
+            var feature_group_3355a24cd17bc857281d4c1104adf7b5 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_27dcd052b51c27fd44e9c2f181dc8e06.addTo(map_3997e3bf8b872243b6beb38122ad78bc);
+            feature_group_3355a24cd17bc857281d4c1104adf7b5.addTo(map_825b750eeb3cd019ecfd81f8c3b8794b);
         
     
-            var feature_group_e712afed6f54b72f23c7ebd92e566b00 = L.featureGroup(
+            var feature_group_5e5e1df2510fe49065f9aae4a8311e2b = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_e712afed6f54b72f23c7ebd92e566b00.addTo(map_3997e3bf8b872243b6beb38122ad78bc);
+            feature_group_5e5e1df2510fe49065f9aae4a8311e2b.addTo(map_825b750eeb3cd019ecfd81f8c3b8794b);
         
     
-            var layer_control_c032ee31bda4f3f701ef796a004ce3d6_layers = {
+            var layer_control_d51cce789106c91cf38d6369532cafb3_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_dd2ab584e8a9aaf71db1e976672f37fe,
+                    "openstreetmap" : tile_layer_96c26b93f5f759760996e51024b005f1,
                 },
                 overlays :  {
-                    "\u2605 Lugares" : feature_group_27dcd052b51c27fd44e9c2f181dc8e06,
-                    "\u2665 Pessoas" : feature_group_e712afed6f54b72f23c7ebd92e566b00,
+                    "\u2605 Lugares" : feature_group_3355a24cd17bc857281d4c1104adf7b5,
+                    "\u2665 Pessoas" : feature_group_5e5e1df2510fe49065f9aae4a8311e2b,
                 },
             };
-            let layer_control_c032ee31bda4f3f701ef796a004ce3d6 = L.control.layers(
-                layer_control_c032ee31bda4f3f701ef796a004ce3d6_layers.base_layers,
-                layer_control_c032ee31bda4f3f701ef796a004ce3d6_layers.overlays,
+            let layer_control_d51cce789106c91cf38d6369532cafb3 = L.control.layers(
+                layer_control_d51cce789106c91cf38d6369532cafb3_layers.base_layers,
+                layer_control_d51cce789106c91cf38d6369532cafb3_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_3997e3bf8b872243b6beb38122ad78bc);
+            ).addTo(map_825b750eeb3cd019ecfd81f8c3b8794b);
 
         
 </script>
