@@ -3,7 +3,7 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="versao-dados" content="bbc92f823c5f">
+    <meta name="versao-dados" content="7cdf3f8aa184">
     <title>Mapa de Valor do Território — RPF 2º Ciclo</title>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -19,7 +19,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_959d48e33a57bf895b3e6d91489bbf7f {
+                #map_4b5c44eaf60db09e9647c55272427deb {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -64,6 +64,7 @@
         max-height:calc(100vh - 24px); overflow-y:auto; box-sizing:border-box;
       }
       #painel-mapa.oculto { display:none; }
+      .org-item:hover { background:#eef3f7; }
       #painel-botao {
         position:fixed; bottom:18px; right:12px; z-index:9999; width:42px; height:42px;
         border-radius:50%; border:none; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.35);
@@ -87,13 +88,32 @@
       <small>A cor identifica a organização · o símbolo, o tipo</small><br>
       <details style="margin-top:6px">
         <summary style="cursor:pointer;font-size:13px">Ver organizações</summary>
-        <div style="max-height:220px;overflow:auto;font-size:12px;margin-top:4px"><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Instituto Manancial do Cajueiro <small>(3)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Instituto AMA, Acolhimento, Mentoria e Assistência <small>(1)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> Clube de Mães Sagrada Família da Vila Embratel <small>(1)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Grupo União de Mulheres Empreendedoras (GUME) <small>(5)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Associação dos Pequenos Produtores Rurais de Laranjeiras <small>(4)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> Instituto de Cultura e Preservação da Ilha de São Luís (ICPISL) <small>(1)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Instituto Social para Sustentabilidade da Vida Pátio Verde <small>(2)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Instituto Leide Emília Feliz <small>(1)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável <small>(3)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> União dos Moradores do Residencial Primavera <small>(2)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Instituto Rosa Dália <small>(2)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> Clube de Mães Nossa Senhora da Vitória <small>(2)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Associação dos Moradores do Jardim São Joaquim <small>(3)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> União dos Moradores da Vila Embratel II <small>(1)</small></div><div style="white-space:nowrap;margin:3px 0"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> União dos Moradores do Bairro Sá Viana <small>(2)</small></div></div>
+        <div style="max-height:220px;overflow:auto;font-size:12px;margin-top:4px"><div class="org-item" onclick="irParaOrganizacao(0)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Instituto Manancial do Cajueiro <small>(3)</small></div><div class="org-item" onclick="irParaOrganizacao(1)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Instituto AMA, Acolhimento, Mentoria e Assistência <small>(1)</small></div><div class="org-item" onclick="irParaOrganizacao(2)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> Clube de Mães Sagrada Família da Vila Embratel <small>(1)</small></div><div class="org-item" onclick="irParaOrganizacao(3)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Grupo União de Mulheres Empreendedoras (GUME) <small>(5)</small></div><div class="org-item" onclick="irParaOrganizacao(4)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Associação dos Pequenos Produtores Rurais de Laranjeiras <small>(4)</small></div><div class="org-item" onclick="irParaOrganizacao(5)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> Instituto de Cultura e Preservação da Ilha de São Luís (ICPISL) <small>(1)</small></div><div class="org-item" onclick="irParaOrganizacao(6)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Instituto Social para Sustentabilidade da Vida Pátio Verde <small>(2)</small></div><div class="org-item" onclick="irParaOrganizacao(7)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Instituto Leide Emília Feliz <small>(1)</small></div><div class="org-item" onclick="irParaOrganizacao(8)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável <small>(3)</small></div><div class="org-item" onclick="irParaOrganizacao(9)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> União dos Moradores do Residencial Primavera <small>(2)</small></div><div class="org-item" onclick="irParaOrganizacao(10)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> Instituto Rosa Dália <small>(2)</small></div><div class="org-item" onclick="irParaOrganizacao(11)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> Clube de Mães Nossa Senhora da Vitória <small>(2)</small></div><div class="org-item" onclick="irParaOrganizacao(12)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#F2A71D;vertical-align:-1px"></span> Associação dos Moradores do Jardim São Joaquim <small>(3)</small></div><div class="org-item" onclick="irParaOrganizacao(13)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1D6E96;vertical-align:-1px"></span> União dos Moradores da Vila Embratel II <small>(1)</small></div><div class="org-item" onclick="irParaOrganizacao(14)" title="Ver no mapa" style="white-space:nowrap;margin:3px 0;cursor:pointer"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#C11F3D;vertical-align:-1px"></span> União dos Moradores do Bairro Sá Viana <small>(2)</small></div></div>
       </details>
-      <small>Dados atualizados em 24/10/2026 09:51</small>
+      <small>Dados atualizados em 24/10/2026 10:01</small>
     </div>
     <script>
       function alternarPainelMapa() {
         document.getElementById('painel-mapa').classList.toggle('oculto');
+      }
+      // Clique numa organização da lista: o mapa enquadra os pontos dela. Com um ponto só,
+      // aproxima e já abre o card. No celular, esconde o painel para mostrar o mapa.
+      var ORG_PONTOS = [[[-2.6181321971869553, -44.35145362803223, "marker_ff42702addd75030aec3ab2b67df3c0c"], [-2.6183902772678893, -44.35121720749204, "marker_55a649a3c3c404a81cae95ebd0257d17"], [-2.6180889195998933, -44.35194670718456, "marker_5b2b3410a49d9b0d1b97e3a85f810f16"]], [[-2.5405437151943513, -44.33151500337452, "marker_281d0ec0fa932f3f925a892fa74098dc"]], [[-2.5746297255368127, -44.309396610739185, "marker_14e8f9a157de0c684654b33307d6f98b"]], [[-2.5463231679975182, -44.32954104713859, "marker_5caa87938b9a36f0ead7c853d99b7161"], [-2.546581248078452, -44.3293046265984, "marker_0824a316fe97c434f34abbeb40309916"], [-2.546279890410456, -44.33003412629092, "marker_0961e5cb80768a71a88d4a7a25f23ac6"], [-2.545954327483962, -44.32905994769403, "marker_71f189b0d89c93ca4992e534e7a8fc0a"], [-2.547012465428707, -44.32966298585826, "marker_f31a0e4678dad443bd37ea4201115800"]], [[-2.688421879446716, -44.30428719536425, "marker_885e7eb0856e9b53a4bf88d0f00581f2"], [-2.68867995952765, -44.30405077482406, "marker_83668544a3861fa1bf7311cc6fa1089c"], [-2.688378601859654, -44.30478027451658, "marker_59e76f0fce5808d1d481042d77f9b27d"], [-2.68805303893316, -44.30380609591969, "marker_470c066cded9274c0b9736ff4b745c08"]], [[-2.5748878056177467, -44.309160190198995, "marker_871b03f6f10192a616b0aeca0633106f"]], [[-2.6700991018983276, -44.283840682147094, "marker_230f42eb388b5a8a12cdabd322275f91"], [-2.6703571819792615, -44.283604261606904, "marker_ab15639e9485fc28f4c9a7922efaeacc"]], [[-2.5745864479497507, -44.30988968989151, "marker_9d5c828b843ea37d07dc44bc5a325f6a"]], [[-2.5446264400835465, -44.32826571623111, "marker_ad6e0371416427d49328c482d78a2ba5"], [-2.5448845201644805, -44.32802929569092, "marker_757fcc98cfcad6afa1e79ce9c287c567"], [-2.5445831624964845, -44.328758795383436, "marker_bc0ee12eae6fa488ebeeba7a887e90ca"]], [[-2.5742608850232567, -44.30891551129462, "marker_ae1b11f2368a648d301dc84bc849e5eb"], [-2.5753190229680016, -44.30951854945886, "marker_8f1415023482d21d76858ee2117408df"]], [[-2.5716428796383464, -44.294878689745914, "marker_326a9ae3e497123f0fa034781e66da68"], [-2.5719009597192803, -44.294642269205724, "marker_9430a7d20edd3122bd7d6fd2112858ac"]], [[-2.5589052091605424, -44.30710078555229, "marker_0318589a2ccf5b709ee5581bd97c6f6a"], [-2.5591632892414764, -44.306864365012096, "marker_2ac8d377eca7354c874e4ee82c5223e4"]], [[-2.620749440794816, -44.31705949072458, "marker_a8c342ff0ed361c71401550701955c92"], [-2.62100752087575, -44.31682307018439, "marker_ada9affc01d25eeec26f6879bfe268e0"], [-2.620706163207754, -44.31755256987691, "marker_3a6c920f98b133ffdaf6e556b6aba0d3"]], [[-2.5739693739193275, -44.30981665328618, "marker_301a5a39b4dfd7f20587956f6ff8a529"]], [[-2.5588619315734804, -44.307593864704614, "marker_dcb76720ec40f808073ef047634e7186"], [-2.5585363686469864, -44.30661968610772, "marker_28bd5d3452868d690abe3c7de9b4e9ab"]]];
+      function irParaOrganizacao(i) {
+        var pts = ORG_PONTOS[i] || [];
+        if (!pts.length) return;
+        var mapa = window["map_4b5c44eaf60db09e9647c55272427deb"];
+        if (pts.length === 1) {
+          mapa.setView([pts[0][0], pts[0][1]], 17);
+          var mk = window[pts[0][2]];
+          if (mk) mk.openPopup();
+        } else {
+          mapa.fitBounds(pts.map(function (p) { return [p[0], p[1]]; }),
+                         {maxZoom: 17, padding: [50, 50]});
+        }
+        if (window.innerWidth < 680) {
+          document.getElementById('painel-mapa').classList.add('oculto');
+        }
       }
       (function () {
         if (window.innerWidth < 680) {
@@ -105,7 +125,7 @@
     
     <script>
       (function () {
-        var atual = "bbc92f823c5f";
+        var atual = "7cdf3f8aa184";
         setInterval(function () {
           if (document.querySelector('.leaflet-popup')) return;
           fetch(location.pathname + '?v=' + Date.now(), {cache: 'no-store'})
@@ -143,14 +163,14 @@
     </script>
     
     
-            <div class="folium-map" id="map_959d48e33a57bf895b3e6d91489bbf7f" ></div>
+            <div class="folium-map" id="map_4b5c44eaf60db09e9647c55272427deb" ></div>
         
 </body>
 <script>
     
     
-            var map_959d48e33a57bf895b3e6d91489bbf7f = L.map(
-                "map_959d48e33a57bf895b3e6d91489bbf7f",
+            var map_4b5c44eaf60db09e9647c55272427deb = L.map(
+                "map_4b5c44eaf60db09e9647c55272427deb",
                 {
                     center: [-2.5922198321242775, -44.31602809320965],
                     crs: L.CRS.EPSG3857,
@@ -167,7 +187,7 @@
 
         
     
-            var tile_layer_be0ff52cd7a50606ec60f04e15277b01 = L.tileLayer(
+            var tile_layer_3f8ba8ca93227c7bf475eebce7ec6f5d = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -184,23 +204,23 @@
             );
         
     
-            tile_layer_be0ff52cd7a50606ec60f04e15277b01.addTo(map_959d48e33a57bf895b3e6d91489bbf7f);
+            tile_layer_3f8ba8ca93227c7bf475eebce7ec6f5d.addTo(map_4b5c44eaf60db09e9647c55272427deb);
         
     
-            var feature_group_3e68526b1d02d5f827a306902f8baa1b = L.featureGroup(
+            var feature_group_f4da2ef0e4f9b976da3b707913eaad63 = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_c9f4b2910094a6a1e5798e91748b4d9d = L.marker(
+            var marker_55a649a3c3c404a81cae95ebd0257d17 = L.marker(
                 [-2.6183902772678893, -44.35121720749204],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_85e2859388940ac6374a4f1c2b7930e0 = L.divIcon({
+            var div_icon_bbb275b70f45012249c02f3cb683d9b0 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -208,24 +228,24 @@
 });
         
     
-        var popup_072b46eaa3b22912d7ad03259dad9d7f = L.popup({
+        var popup_95346cbe7fb868c147416155c06625bc = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_921dac03da9b1f750bbac3ecf107fa36 = $(`<div id="html_921dac03da9b1f750bbac3ecf107fa36" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Instituto Manancial do Cajueiro</b><br><img src="fotos/897666467_instituto_manancial_do_cajueiro.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Organização de Base Comunitária</i><br>Bairro: Cajueiro<br>Perto de: A referência é o próprio Instituto Manancial.<br>Endereço informado: Rua Principal 19 Cajueiro<br><b>Importa por:</b> memoria uso coletivo renda lazer alimentacao referencia organizacao servico<br><b>Desejo:</b> Gostaríamos que o Instituto Manancial do Cajueiro tivesse cada vez mais apoio, parcerias e recursos para ampliar suas ações sociais em benefício da comunidade. Que possa desenvolver mais projetos para crianças, jovens, adultos e idosos, fortalecer as famílias, promover atividades educativas, culturais e esportivas e contribuir para a melhoria da qualidade de vida dos moradores do Cajueiro.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Manancial do Cajueiro</span></div></div>`)[0];
-                popup_072b46eaa3b22912d7ad03259dad9d7f.setContent(html_921dac03da9b1f750bbac3ecf107fa36);
+                var html_e12deba5f22c3543799ec8625847f712 = $(`<div id="html_e12deba5f22c3543799ec8625847f712" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Instituto Manancial do Cajueiro</b><br><img src="fotos/897666467_instituto_manancial_do_cajueiro.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Organização de Base Comunitária</i><br>Bairro: Cajueiro<br>Perto de: A referência é o próprio Instituto Manancial.<br>Endereço informado: Rua Principal 19 Cajueiro<br><b>Importa por:</b> memoria uso coletivo renda lazer alimentacao referencia organizacao servico<br><b>Desejo:</b> Gostaríamos que o Instituto Manancial do Cajueiro tivesse cada vez mais apoio, parcerias e recursos para ampliar suas ações sociais em benefício da comunidade. Que possa desenvolver mais projetos para crianças, jovens, adultos e idosos, fortalecer as famílias, promover atividades educativas, culturais e esportivas e contribuir para a melhoria da qualidade de vida dos moradores do Cajueiro.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Manancial do Cajueiro</span></div></div>`)[0];
+                popup_95346cbe7fb868c147416155c06625bc.setContent(html_e12deba5f22c3543799ec8625847f712);
             
         
 
-        marker_c9f4b2910094a6a1e5798e91748b4d9d.bindPopup(popup_072b46eaa3b22912d7ad03259dad9d7f)
+        marker_55a649a3c3c404a81cae95ebd0257d17.bindPopup(popup_95346cbe7fb868c147416155c06625bc)
         ;
 
         
     
     
-            marker_c9f4b2910094a6a1e5798e91748b4d9d.bindTooltip(
+            marker_55a649a3c3c404a81cae95ebd0257d17.bindTooltip(
                 `<div>
                      Instituto Manancial do Cajueiro — Instituto Manancial do Cajueiro
                  </div>`,
@@ -235,17 +255,17 @@
             );
         
     
-                marker_c9f4b2910094a6a1e5798e91748b4d9d.setIcon(div_icon_85e2859388940ac6374a4f1c2b7930e0);
+                marker_55a649a3c3c404a81cae95ebd0257d17.setIcon(div_icon_bbb275b70f45012249c02f3cb683d9b0);
             
     
-            var marker_89eafc862922c25765f3afc42f8685e2 = L.marker(
+            var marker_5b2b3410a49d9b0d1b97e3a85f810f16 = L.marker(
                 [-2.6180889195998933, -44.35194670718456],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_e6241622373fd12c8a75533296800230 = L.divIcon({
+            var div_icon_f2c4b74489706ec958f35a5f4280980e = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -253,24 +273,24 @@
 });
         
     
-        var popup_0b09f22d51b6ac77355b94172bd12958 = L.popup({
+        var popup_cfc2996a6f8c4399ebfd13b18ba6043c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_03c8b588a2cbf046fd79469fe0c66de7 = $(`<div id="html_03c8b588a2cbf046fd79469fe0c66de7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praia do Cajueiro</b><br><img src="fotos/897666467_praia_do_cajueiro.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Natureza</i><br>Bairro: Cajueiro<br>Perto de: Assembleia de Deus Nações para Cristo<br>Endereço informado: Rua da Praia<br><b>Importa por:</b> memoria uso coletivo renda lazer alimentacao turismo m biodiversidade<br><b>Desejo:</b> Gostaríamos que a Praia do Cajueiro fosse preservada e valorizada, com melhorias na infraestrutura, limpeza e proteção ambiental. Além de ser um importante espaço de lazer, convivência e contato com a natureza, a praia também é fundamental para a pesca e para o sustento de muitas famílias da comunidade. Desejamos que os pescadores tenham melhores condições de trabalho, que a natureza seja protegida e que esse patrimônio continue beneficiando as atuais e futuras gerações do Cajueiro.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Manancial do Cajueiro</span></div></div>`)[0];
-                popup_0b09f22d51b6ac77355b94172bd12958.setContent(html_03c8b588a2cbf046fd79469fe0c66de7);
+                var html_a201506a10455e8740a7ccf1eb372c44 = $(`<div id="html_a201506a10455e8740a7ccf1eb372c44" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praia do Cajueiro</b><br><img src="fotos/897666467_praia_do_cajueiro.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Natureza</i><br>Bairro: Cajueiro<br>Perto de: Assembleia de Deus Nações para Cristo<br>Endereço informado: Rua da Praia<br><b>Importa por:</b> memoria uso coletivo renda lazer alimentacao turismo m biodiversidade<br><b>Desejo:</b> Gostaríamos que a Praia do Cajueiro fosse preservada e valorizada, com melhorias na infraestrutura, limpeza e proteção ambiental. Além de ser um importante espaço de lazer, convivência e contato com a natureza, a praia também é fundamental para a pesca e para o sustento de muitas famílias da comunidade. Desejamos que os pescadores tenham melhores condições de trabalho, que a natureza seja protegida e que esse patrimônio continue beneficiando as atuais e futuras gerações do Cajueiro.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Manancial do Cajueiro</span></div></div>`)[0];
+                popup_cfc2996a6f8c4399ebfd13b18ba6043c.setContent(html_a201506a10455e8740a7ccf1eb372c44);
             
         
 
-        marker_89eafc862922c25765f3afc42f8685e2.bindPopup(popup_0b09f22d51b6ac77355b94172bd12958)
+        marker_5b2b3410a49d9b0d1b97e3a85f810f16.bindPopup(popup_cfc2996a6f8c4399ebfd13b18ba6043c)
         ;
 
         
     
     
-            marker_89eafc862922c25765f3afc42f8685e2.bindTooltip(
+            marker_5b2b3410a49d9b0d1b97e3a85f810f16.bindTooltip(
                 `<div>
                      Praia do Cajueiro — Instituto Manancial do Cajueiro
                  </div>`,
@@ -280,17 +300,17 @@
             );
         
     
-                marker_89eafc862922c25765f3afc42f8685e2.setIcon(div_icon_e6241622373fd12c8a75533296800230);
+                marker_5b2b3410a49d9b0d1b97e3a85f810f16.setIcon(div_icon_f2c4b74489706ec958f35a5f4280980e);
             
     
-            var marker_50bcb62f3f1a61a49dd530a924c082ee = L.marker(
+            var marker_281d0ec0fa932f3f925a892fa74098dc = L.marker(
                 [-2.5405437151943513, -44.33151500337452],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_bb16800678e9d797dbf8d7cfe2d630ce = L.divIcon({
+            var div_icon_b9899498159f2709cdbaa1cf9a599009 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -298,24 +318,24 @@
 });
         
     
-        var popup_37f1f595dfd5a003880c6ff1b8ac8a0e = L.popup({
+        var popup_a766ca83ad0eea8269516e8d82f0e23f = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_93f026fc7edb7301c34dd6fcd189ddf2 = $(`<div id="html_93f026fc7edb7301c34dd6fcd189ddf2" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praça do Residencial Bacanga</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Mauro Fecury I<br>Perto de: Praça Residencial Bacanga<br><b>Importa por:</b> uso coletivo<br><b>Desejo:</b> Um grande evento comunitário social<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto AMA, Acolhimento, Mentoria e Assistência</span></div></div>`)[0];
-                popup_37f1f595dfd5a003880c6ff1b8ac8a0e.setContent(html_93f026fc7edb7301c34dd6fcd189ddf2);
+                var html_d3dfefc80dba6933f5f664debf3d7b51 = $(`<div id="html_d3dfefc80dba6933f5f664debf3d7b51" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praça do Residencial Bacanga</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Mauro Fecury I<br>Perto de: Praça Residencial Bacanga<br><b>Importa por:</b> uso coletivo<br><b>Desejo:</b> Um grande evento comunitário social<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto AMA, Acolhimento, Mentoria e Assistência</span></div></div>`)[0];
+                popup_a766ca83ad0eea8269516e8d82f0e23f.setContent(html_d3dfefc80dba6933f5f664debf3d7b51);
             
         
 
-        marker_50bcb62f3f1a61a49dd530a924c082ee.bindPopup(popup_37f1f595dfd5a003880c6ff1b8ac8a0e)
+        marker_281d0ec0fa932f3f925a892fa74098dc.bindPopup(popup_a766ca83ad0eea8269516e8d82f0e23f)
         ;
 
         
     
     
-            marker_50bcb62f3f1a61a49dd530a924c082ee.bindTooltip(
+            marker_281d0ec0fa932f3f925a892fa74098dc.bindTooltip(
                 `<div>
                      Praça do Residencial Bacanga — Instituto AMA, Acolhimento, Mentoria e Assistência
                  </div>`,
@@ -325,17 +345,17 @@
             );
         
     
-                marker_50bcb62f3f1a61a49dd530a924c082ee.setIcon(div_icon_bb16800678e9d797dbf8d7cfe2d630ce);
+                marker_281d0ec0fa932f3f925a892fa74098dc.setIcon(div_icon_b9899498159f2709cdbaa1cf9a599009);
             
     
-            var marker_61f5a0d3910008c34dbaf28e9c424c9b = L.marker(
+            var marker_14e8f9a157de0c684654b33307d6f98b = L.marker(
                 [-2.5746297255368127, -44.309396610739185],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_9c54b09946b8c6e789791f07c92b709a = L.divIcon({
+            var div_icon_ccaac1d6546062b5b85539464e5c42cd = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -343,24 +363,24 @@
 });
         
     
-        var popup_b5d147d03af12d144d1b0b0e257fb0e7 = L.popup({
+        var popup_3f239984c3e9a149c426e6c04ad9d7d8 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_5d9fc5c1268bb4ab10afe542beef418a = $(`<div id="html_5d9fc5c1268bb4ab10afe542beef418a" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Vila da Vila embratel</b><br><i>Outro</i><br>Bairro: Vila Embratel<br>Perto de: No centro da comunidade<br><b>Importa por:</b> memoria uso coletivo renda lazer turismo m referencia servico<br><b>Desejo:</b> Mais ações sociais<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Clube de Mães Sagrada Família da Vila Embratel</span></div></div>`)[0];
-                popup_b5d147d03af12d144d1b0b0e257fb0e7.setContent(html_5d9fc5c1268bb4ab10afe542beef418a);
+                var html_7713bf0f65c3936005fee8a258f9e6a0 = $(`<div id="html_7713bf0f65c3936005fee8a258f9e6a0" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Vila da Vila embratel</b><br><i>Outro</i><br>Bairro: Vila Embratel<br>Perto de: No centro da comunidade<br><b>Importa por:</b> memoria uso coletivo renda lazer turismo m referencia servico<br><b>Desejo:</b> Mais ações sociais<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Clube de Mães Sagrada Família da Vila Embratel</span></div></div>`)[0];
+                popup_3f239984c3e9a149c426e6c04ad9d7d8.setContent(html_7713bf0f65c3936005fee8a258f9e6a0);
             
         
 
-        marker_61f5a0d3910008c34dbaf28e9c424c9b.bindPopup(popup_b5d147d03af12d144d1b0b0e257fb0e7)
+        marker_14e8f9a157de0c684654b33307d6f98b.bindPopup(popup_3f239984c3e9a149c426e6c04ad9d7d8)
         ;
 
         
     
     
-            marker_61f5a0d3910008c34dbaf28e9c424c9b.bindTooltip(
+            marker_14e8f9a157de0c684654b33307d6f98b.bindTooltip(
                 `<div>
                      Vila da Vila embratel — Clube de Mães Sagrada Família da Vila Embratel
                  </div>`,
@@ -370,17 +390,17 @@
             );
         
     
-                marker_61f5a0d3910008c34dbaf28e9c424c9b.setIcon(div_icon_9c54b09946b8c6e789791f07c92b709a);
+                marker_14e8f9a157de0c684654b33307d6f98b.setIcon(div_icon_ccaac1d6546062b5b85539464e5c42cd);
             
     
-            var marker_2d3f8921c1f7bc6414cd6de96e574f79 = L.marker(
+            var marker_5caa87938b9a36f0ead7c853d99b7161 = L.marker(
                 [-2.5463231679975182, -44.32954104713859],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_06866a050c6181ac9b2bd7ea278cd316 = L.divIcon({
+            var div_icon_be97cdef1a167bd1c0d935efcc72dbe1 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -388,24 +408,24 @@
 });
         
     
-        var popup_a69d083a91bbda109b28dd31d8ea1c50 = L.popup({
+        var popup_c22a84b4cee2cd2194cf23fd77a25ce4 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_c427ecac5ccb301820a3f63936f7dcb3 = $(`<div id="html_c427ecac5ccb301820a3f63936f7dcb3" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Campo do Canarinho</b><br><i>Equipamento público — Quadra esportiva</i><br>Bairro: Vila São Luís<br>Perto de: Ao lado da praça<br>Endereço informado: Final da Rua do Sol<br><b>Importa por:</b> memoria uso coletivo lazer referencia organizacao<br><b>Desejo:</b> Melhorias na infraestrutura, construção de arquibancadas, acessibilidade.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
-                popup_a69d083a91bbda109b28dd31d8ea1c50.setContent(html_c427ecac5ccb301820a3f63936f7dcb3);
+                var html_7291967fe9cea884448ceb622932d0d2 = $(`<div id="html_7291967fe9cea884448ceb622932d0d2" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Campo do Canarinho</b><br><i>Equipamento público — Quadra esportiva</i><br>Bairro: Vila São Luís<br>Perto de: Ao lado da praça<br>Endereço informado: Final da Rua do Sol<br><b>Importa por:</b> memoria uso coletivo lazer referencia organizacao<br><b>Desejo:</b> Melhorias na infraestrutura, construção de arquibancadas, acessibilidade.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
+                popup_c22a84b4cee2cd2194cf23fd77a25ce4.setContent(html_7291967fe9cea884448ceb622932d0d2);
             
         
 
-        marker_2d3f8921c1f7bc6414cd6de96e574f79.bindPopup(popup_a69d083a91bbda109b28dd31d8ea1c50)
+        marker_5caa87938b9a36f0ead7c853d99b7161.bindPopup(popup_c22a84b4cee2cd2194cf23fd77a25ce4)
         ;
 
         
     
     
-            marker_2d3f8921c1f7bc6414cd6de96e574f79.bindTooltip(
+            marker_5caa87938b9a36f0ead7c853d99b7161.bindTooltip(
                 `<div>
                      Campo do Canarinho — Grupo União de Mulheres Empreendedoras (GUME)
                  </div>`,
@@ -415,17 +435,17 @@
             );
         
     
-                marker_2d3f8921c1f7bc6414cd6de96e574f79.setIcon(div_icon_06866a050c6181ac9b2bd7ea278cd316);
+                marker_5caa87938b9a36f0ead7c853d99b7161.setIcon(div_icon_be97cdef1a167bd1c0d935efcc72dbe1);
             
     
-            var marker_6108b6303f6b1e15387010744a649052 = L.marker(
+            var marker_f31a0e4678dad443bd37ea4201115800 = L.marker(
                 [-2.547012465428707, -44.32966298585826],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_aa8599de48556dcf4606ca786344e5f7 = L.divIcon({
+            var div_icon_9cd32910e2b0beae404f644a9661f1b7 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -433,24 +453,24 @@
 });
         
     
-        var popup_5ea6dff94366e8a07bb65849370eea6b = L.popup({
+        var popup_4045c398761327573084f230ce2791bc = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_fd211a8bddf43fa6bb72a1a0f80217d1 = $(`<div id="html_fd211a8bddf43fa6bb72a1a0f80217d1" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praça do Canarinho</b><br><i>Equipamento público — Praça</i><br>Bairro: Vila São Luís<br>Perto de: Ponto final do ônibus da Vila São Luis<br>Endereço informado: Final da rua do Sol<br><b>Importa por:</b> memoria uso coletivo lazer organizacao<br><b>Desejo:</b> Melhorias na infraestrutura, valorização do espaço com programações culturais, limpeza pública.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
-                popup_5ea6dff94366e8a07bb65849370eea6b.setContent(html_fd211a8bddf43fa6bb72a1a0f80217d1);
+                var html_3f78508490511dbd629dd9bcd919c323 = $(`<div id="html_3f78508490511dbd629dd9bcd919c323" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praça do Canarinho</b><br><i>Equipamento público — Praça</i><br>Bairro: Vila São Luís<br>Perto de: Ponto final do ônibus da Vila São Luis<br>Endereço informado: Final da rua do Sol<br><b>Importa por:</b> memoria uso coletivo lazer organizacao<br><b>Desejo:</b> Melhorias na infraestrutura, valorização do espaço com programações culturais, limpeza pública.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
+                popup_4045c398761327573084f230ce2791bc.setContent(html_3f78508490511dbd629dd9bcd919c323);
             
         
 
-        marker_6108b6303f6b1e15387010744a649052.bindPopup(popup_5ea6dff94366e8a07bb65849370eea6b)
+        marker_f31a0e4678dad443bd37ea4201115800.bindPopup(popup_4045c398761327573084f230ce2791bc)
         ;
 
         
     
     
-            marker_6108b6303f6b1e15387010744a649052.bindTooltip(
+            marker_f31a0e4678dad443bd37ea4201115800.bindTooltip(
                 `<div>
                      Praça do Canarinho — Grupo União de Mulheres Empreendedoras (GUME)
                  </div>`,
@@ -460,17 +480,17 @@
             );
         
     
-                marker_6108b6303f6b1e15387010744a649052.setIcon(div_icon_aa8599de48556dcf4606ca786344e5f7);
+                marker_f31a0e4678dad443bd37ea4201115800.setIcon(div_icon_9cd32910e2b0beae404f644a9661f1b7);
             
     
-            var marker_0f0324c4c8f26dad8717da37e335e332 = L.marker(
+            var marker_83668544a3861fa1bf7311cc6fa1089c = L.marker(
                 [-2.68867995952765, -44.30405077482406],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_9711d4db4e58dd978598f87c7781bf78 = L.divIcon({
+            var div_icon_48394acf32e8d1d9e25c54b55a102828 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -478,24 +498,24 @@
 });
         
     
-        var popup_f6b606d4da8922b410246b0bdbe2c476 = L.popup({
+        var popup_bf1b76adf56b5ef9d11a74df0e2e1d7b = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_12dd6e870e57ddcd8d8c5ac9bccb2f59 = $(`<div id="html_12dd6e870e57ddcd8d8c5ac9bccb2f59" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Associação dos Pequenos Produtores Rurais de Laranjeiras</b><br><i>Organização de Base Comunitária</i><br>Bairro: Pedrinhas<br>Perto de: Depois da Igreja Assembleia de Deus<br>Endereço informado: Rua das Hortas, 18, Assentamento Laranjeiras; Bairro Pedrinhas<br><b>Importa por:</b> memoria uso coletivo organizacao servico<br><b>Desejo:</b> Que o espaço da Associação seja cada vez mais utilizado pelos jovens da comunidade, promovendo atividades educativas, culturais e de convivência. Como plano futuro, pretende-se implantar uma Biblioteca Interativa da Zona Rural, voltada ao incentivo à leitura, à inclusão digital, à valorização dos saberes locais e à ampliação das oportunidades de aprendizagem para crianças e jovens da comunidade.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
-                popup_f6b606d4da8922b410246b0bdbe2c476.setContent(html_12dd6e870e57ddcd8d8c5ac9bccb2f59);
+                var html_0f40ea9f79154c2ba973734ca36fb4cd = $(`<div id="html_0f40ea9f79154c2ba973734ca36fb4cd" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Associação dos Pequenos Produtores Rurais de Laranjeiras</b><br><i>Organização de Base Comunitária</i><br>Bairro: Pedrinhas<br>Perto de: Depois da Igreja Assembleia de Deus<br>Endereço informado: Rua das Hortas, 18, Assentamento Laranjeiras; Bairro Pedrinhas<br><b>Importa por:</b> memoria uso coletivo organizacao servico<br><b>Desejo:</b> Que o espaço da Associação seja cada vez mais utilizado pelos jovens da comunidade, promovendo atividades educativas, culturais e de convivência. Como plano futuro, pretende-se implantar uma Biblioteca Interativa da Zona Rural, voltada ao incentivo à leitura, à inclusão digital, à valorização dos saberes locais e à ampliação das oportunidades de aprendizagem para crianças e jovens da comunidade.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
+                popup_bf1b76adf56b5ef9d11a74df0e2e1d7b.setContent(html_0f40ea9f79154c2ba973734ca36fb4cd);
             
         
 
-        marker_0f0324c4c8f26dad8717da37e335e332.bindPopup(popup_f6b606d4da8922b410246b0bdbe2c476)
+        marker_83668544a3861fa1bf7311cc6fa1089c.bindPopup(popup_bf1b76adf56b5ef9d11a74df0e2e1d7b)
         ;
 
         
     
     
-            marker_0f0324c4c8f26dad8717da37e335e332.bindTooltip(
+            marker_83668544a3861fa1bf7311cc6fa1089c.bindTooltip(
                 `<div>
                      Associação dos Pequenos Produtores Rurais de Laranjeiras — Associação dos Pequenos Produtores Rurais de Laranjeiras
                  </div>`,
@@ -505,17 +525,17 @@
             );
         
     
-                marker_0f0324c4c8f26dad8717da37e335e332.setIcon(div_icon_9711d4db4e58dd978598f87c7781bf78);
+                marker_83668544a3861fa1bf7311cc6fa1089c.setIcon(div_icon_48394acf32e8d1d9e25c54b55a102828);
             
     
-            var marker_b91728fc196097104c6274228327868c = L.marker(
+            var marker_59e76f0fce5808d1d481042d77f9b27d = L.marker(
                 [-2.688378601859654, -44.30478027451658],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_db68b4eca3160bb1b6d769112889ec7e = L.divIcon({
+            var div_icon_c0ab02d1b9df4f49343e756c8d03d8c1 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -523,24 +543,24 @@
 });
         
     
-        var popup_34820643a66b164e88aad844de7ce426 = L.popup({
+        var popup_061a5b5b4eb72cce97e8f3412a6b111c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_b2557242be5d88aa22b16dcb37b89fe6 = $(`<div id="html_b2557242be5d88aa22b16dcb37b89fe6" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Casa de Farinha</b><br><i>Trabalho e renda</i><br>Bairro: Pedrinhas<br>Perto de: Próxima da Associação<br><b>Importa por:</b> alimentacao<br><b>Desejo:</b> Que a Casa de Farinha seja mais utilizada pelas famílias da comunidade, fortalecendo a produção de farinha, a geração de renda, a valorização dos saberes tradicionais e a preservação da cultura rural, promovendo o trabalho coletivo e o desenvolvimento econômico local.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
-                popup_34820643a66b164e88aad844de7ce426.setContent(html_b2557242be5d88aa22b16dcb37b89fe6);
+                var html_d41971c54ecda2bbf57b7c44beaa49db = $(`<div id="html_d41971c54ecda2bbf57b7c44beaa49db" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Casa de Farinha</b><br><i>Trabalho e renda</i><br>Bairro: Pedrinhas<br>Perto de: Próxima da Associação<br><b>Importa por:</b> alimentacao<br><b>Desejo:</b> Que a Casa de Farinha seja mais utilizada pelas famílias da comunidade, fortalecendo a produção de farinha, a geração de renda, a valorização dos saberes tradicionais e a preservação da cultura rural, promovendo o trabalho coletivo e o desenvolvimento econômico local.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
+                popup_061a5b5b4eb72cce97e8f3412a6b111c.setContent(html_d41971c54ecda2bbf57b7c44beaa49db);
             
         
 
-        marker_b91728fc196097104c6274228327868c.bindPopup(popup_34820643a66b164e88aad844de7ce426)
+        marker_59e76f0fce5808d1d481042d77f9b27d.bindPopup(popup_061a5b5b4eb72cce97e8f3412a6b111c)
         ;
 
         
     
     
-            marker_b91728fc196097104c6274228327868c.bindTooltip(
+            marker_59e76f0fce5808d1d481042d77f9b27d.bindTooltip(
                 `<div>
                      Casa de Farinha — Associação dos Pequenos Produtores Rurais de Laranjeiras
                  </div>`,
@@ -550,17 +570,17 @@
             );
         
     
-                marker_b91728fc196097104c6274228327868c.setIcon(div_icon_db68b4eca3160bb1b6d769112889ec7e);
+                marker_59e76f0fce5808d1d481042d77f9b27d.setIcon(div_icon_c0ab02d1b9df4f49343e756c8d03d8c1);
             
     
-            var marker_9cedc0249569ee08f6ddc38e22fe12bb = L.marker(
+            var marker_871b03f6f10192a616b0aeca0633106f = L.marker(
                 [-2.5748878056177467, -44.309160190198995],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_311ea3bde31f14be872fb3c8a0059acc = L.divIcon({
+            var div_icon_02f946924fc27fe1476f9a8f72dede53 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -568,24 +588,24 @@
 });
         
     
-        var popup_48f98c2d46e63bbbc1ff2193a33f6099 = L.popup({
+        var popup_48d24f07b8f7e841753845bfea7ae3c5 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_edfb61d6ac9ae33313dd4a887d4d6d67 = $(`<div id="html_edfb61d6ac9ae33313dd4a887d4d6d67" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>UNIÃO DE MORADORES DA  VILA EMBRATEL</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Embratel<br>Perto de: AO   LADO DA ASSEMBLEIA DE DEUS<br>Endereço informado: AVENIDA SARNEY FILHO 101  -  VILA EMBRATEL<br><b>Importa por:</b> memoria uso coletivo organizacao<br><b>Desejo:</b> VOLTASSE A SER O ORGANIZAÇÃO QUE JÁ FOI ANTE COM GRANDE ATUAÇÃO NA COMUNIDADE.<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto de Cultura e Preservação da Ilha de São Luís (ICPISL)</span></div></div>`)[0];
-                popup_48f98c2d46e63bbbc1ff2193a33f6099.setContent(html_edfb61d6ac9ae33313dd4a887d4d6d67);
+                var html_70bf4c1e5a224a9ab4e2563eb7852eff = $(`<div id="html_70bf4c1e5a224a9ab4e2563eb7852eff" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>UNIÃO DE MORADORES DA  VILA EMBRATEL</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Embratel<br>Perto de: AO   LADO DA ASSEMBLEIA DE DEUS<br>Endereço informado: AVENIDA SARNEY FILHO 101  -  VILA EMBRATEL<br><b>Importa por:</b> memoria uso coletivo organizacao<br><b>Desejo:</b> VOLTASSE A SER O ORGANIZAÇÃO QUE JÁ FOI ANTE COM GRANDE ATUAÇÃO NA COMUNIDADE.<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto de Cultura e Preservação da Ilha de São Luís (ICPISL)</span></div></div>`)[0];
+                popup_48d24f07b8f7e841753845bfea7ae3c5.setContent(html_70bf4c1e5a224a9ab4e2563eb7852eff);
             
         
 
-        marker_9cedc0249569ee08f6ddc38e22fe12bb.bindPopup(popup_48f98c2d46e63bbbc1ff2193a33f6099)
+        marker_871b03f6f10192a616b0aeca0633106f.bindPopup(popup_48d24f07b8f7e841753845bfea7ae3c5)
         ;
 
         
     
     
-            marker_9cedc0249569ee08f6ddc38e22fe12bb.bindTooltip(
+            marker_871b03f6f10192a616b0aeca0633106f.bindTooltip(
                 `<div>
                      UNIÃO DE MORADORES DA  VILA EMBRATEL — Instituto de Cultura e Preservação da Ilha de São Luís (ICPISL)
                  </div>`,
@@ -595,17 +615,17 @@
             );
         
     
-                marker_9cedc0249569ee08f6ddc38e22fe12bb.setIcon(div_icon_311ea3bde31f14be872fb3c8a0059acc);
+                marker_871b03f6f10192a616b0aeca0633106f.setIcon(div_icon_02f946924fc27fe1476f9a8f72dede53);
             
     
-            var marker_8692e5698952b1dd3f709afde5dae496 = L.marker(
+            var marker_ab15639e9485fc28f4c9a7922efaeacc = L.marker(
                 [-2.6703571819792615, -44.283604261606904],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_e3ff82785520077430fea097cfa12e6a = L.divIcon({
+            var div_icon_110ca1ea7c1dd4742a536184df695316 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -613,24 +633,24 @@
 });
         
     
-        var popup_011e90e9da7abb660ea1596ae92735a8 = L.popup({
+        var popup_24a492a44738347391be159aed70213c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_8e3260a89677b40eb83f4120dfd571e4 = $(`<div id="html_8e3260a89677b40eb83f4120dfd571e4" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Unidade Básica de Saúde de Itapera</b><br><i>Equipamento público — Posto de saúde</i><br>Bairro: Itapera<br>Perto de: Próximo a quadra de esporte de Itapera<br>Endereço informado: Avenida principal, Itapera<br><b>Importa por:</b> uso coletivo servico<br><b>Desejo:</b> Tivesse mais especialidades médicas<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Social para Sustentabilidade da Vida Pátio Verde</span></div></div>`)[0];
-                popup_011e90e9da7abb660ea1596ae92735a8.setContent(html_8e3260a89677b40eb83f4120dfd571e4);
+                var html_042169e99a65db91cd9bd8c71130f6e2 = $(`<div id="html_042169e99a65db91cd9bd8c71130f6e2" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Unidade Básica de Saúde de Itapera</b><br><i>Equipamento público — Posto de saúde</i><br>Bairro: Itapera<br>Perto de: Próximo a quadra de esporte de Itapera<br>Endereço informado: Avenida principal, Itapera<br><b>Importa por:</b> uso coletivo servico<br><b>Desejo:</b> Tivesse mais especialidades médicas<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Social para Sustentabilidade da Vida Pátio Verde</span></div></div>`)[0];
+                popup_24a492a44738347391be159aed70213c.setContent(html_042169e99a65db91cd9bd8c71130f6e2);
             
         
 
-        marker_8692e5698952b1dd3f709afde5dae496.bindPopup(popup_011e90e9da7abb660ea1596ae92735a8)
+        marker_ab15639e9485fc28f4c9a7922efaeacc.bindPopup(popup_24a492a44738347391be159aed70213c)
         ;
 
         
     
     
-            marker_8692e5698952b1dd3f709afde5dae496.bindTooltip(
+            marker_ab15639e9485fc28f4c9a7922efaeacc.bindTooltip(
                 `<div>
                      Unidade Básica de Saúde de Itapera — Instituto Social para Sustentabilidade da Vida Pátio Verde
                  </div>`,
@@ -640,17 +660,17 @@
             );
         
     
-                marker_8692e5698952b1dd3f709afde5dae496.setIcon(div_icon_e3ff82785520077430fea097cfa12e6a);
+                marker_ab15639e9485fc28f4c9a7922efaeacc.setIcon(div_icon_110ca1ea7c1dd4742a536184df695316);
             
     
-            var marker_fa57457258b98f37142054a2e02c27d8 = L.marker(
+            var marker_9d5c828b843ea37d07dc44bc5a325f6a = L.marker(
                 [-2.5745864479497507, -44.30988968989151],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_8f37cf8f65fd1ed680742273fb08fe75 = L.divIcon({
+            var div_icon_b1aeb0b445d2cc94cce38a6b61d61e27 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -658,24 +678,24 @@
 });
         
     
-        var popup_32f4edc84246ebdcc3b409aab6a0aa7a = L.popup({
+        var popup_920838134227c9893a328db64c042763 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_4b64d09d65ff75050ce87b963f4e5e7d = $(`<div id="html_4b64d09d65ff75050ce87b963f4e5e7d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praça 7 Palmeiras</b><br><i>Equipamento público — Praça</i><br>Bairro: Vila Embratel<br>Perto de: Próximo à feira da Vila Embratel<br>Endereço informado: Rua da Vitória<br><b>Importa por:</b> memoria uso coletivo renda lazer referencia organizacao servico<br><b>Desejo:</b> Que o lugar pudesse oferecer mais opções de lazer, apresentações, ações, palestras.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Leide Emília Feliz</span></div></div>`)[0];
-                popup_32f4edc84246ebdcc3b409aab6a0aa7a.setContent(html_4b64d09d65ff75050ce87b963f4e5e7d);
+                var html_50965c8716f1762f1bdf58f0c47aaefd = $(`<div id="html_50965c8716f1762f1bdf58f0c47aaefd" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Praça 7 Palmeiras</b><br><i>Equipamento público — Praça</i><br>Bairro: Vila Embratel<br>Perto de: Próximo à feira da Vila Embratel<br>Endereço informado: Rua da Vitória<br><b>Importa por:</b> memoria uso coletivo renda lazer referencia organizacao servico<br><b>Desejo:</b> Que o lugar pudesse oferecer mais opções de lazer, apresentações, ações, palestras.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Leide Emília Feliz</span></div></div>`)[0];
+                popup_920838134227c9893a328db64c042763.setContent(html_50965c8716f1762f1bdf58f0c47aaefd);
             
         
 
-        marker_fa57457258b98f37142054a2e02c27d8.bindPopup(popup_32f4edc84246ebdcc3b409aab6a0aa7a)
+        marker_9d5c828b843ea37d07dc44bc5a325f6a.bindPopup(popup_920838134227c9893a328db64c042763)
         ;
 
         
     
     
-            marker_fa57457258b98f37142054a2e02c27d8.bindTooltip(
+            marker_9d5c828b843ea37d07dc44bc5a325f6a.bindTooltip(
                 `<div>
                      Praça 7 Palmeiras — Instituto Leide Emília Feliz
                  </div>`,
@@ -685,17 +705,17 @@
             );
         
     
-                marker_fa57457258b98f37142054a2e02c27d8.setIcon(div_icon_8f37cf8f65fd1ed680742273fb08fe75);
+                marker_9d5c828b843ea37d07dc44bc5a325f6a.setIcon(div_icon_b1aeb0b445d2cc94cce38a6b61d61e27);
             
     
-            var marker_4d92d5fe63cba0669ab4bd49a3c2f604 = L.marker(
+            var marker_ad6e0371416427d49328c482d78a2ba5 = L.marker(
                 [-2.5446264400835465, -44.32826571623111],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_6b73e4450c7e043f253f853c668a6dcc = L.divIcon({
+            var div_icon_01ee41fe22c67cd426a88d2e1e60aa17 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -703,24 +723,24 @@
 });
         
     
-        var popup_9c6553a9ff5f60c4e6847d0a822e41b5 = L.popup({
+        var popup_65271c1eb47c8a9118fa7af6b1f51435 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_c4d126144890b2aa1b47669408d24d2b = $(`<div id="html_c4d126144890b2aa1b47669408d24d2b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>ETTORE SEBASTIANINI Instituto de Desenvolvimento Social Sustentavel.</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Ariri<br>Perto de: Colegio Cruzeiro do Sul<br>Endereço informado: 3ª Travessa José Sarney, 77 Vila Ariri<br><b>Importa por:</b> uso coletivo lazer alimentacao organizacao servico<br><b>Desejo:</b> Reforma e adequação dos espaços<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável</span></div></div>`)[0];
-                popup_9c6553a9ff5f60c4e6847d0a822e41b5.setContent(html_c4d126144890b2aa1b47669408d24d2b);
+                var html_2d12b726fb7298d311e0acb6a7964227 = $(`<div id="html_2d12b726fb7298d311e0acb6a7964227" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>ETTORE SEBASTIANINI Instituto de Desenvolvimento Social Sustentavel.</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Ariri<br>Perto de: Colegio Cruzeiro do Sul<br>Endereço informado: 3ª Travessa José Sarney, 77 Vila Ariri<br><b>Importa por:</b> uso coletivo lazer alimentacao organizacao servico<br><b>Desejo:</b> Reforma e adequação dos espaços<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável</span></div></div>`)[0];
+                popup_65271c1eb47c8a9118fa7af6b1f51435.setContent(html_2d12b726fb7298d311e0acb6a7964227);
             
         
 
-        marker_4d92d5fe63cba0669ab4bd49a3c2f604.bindPopup(popup_9c6553a9ff5f60c4e6847d0a822e41b5)
+        marker_ad6e0371416427d49328c482d78a2ba5.bindPopup(popup_65271c1eb47c8a9118fa7af6b1f51435)
         ;
 
         
     
     
-            marker_4d92d5fe63cba0669ab4bd49a3c2f604.bindTooltip(
+            marker_ad6e0371416427d49328c482d78a2ba5.bindTooltip(
                 `<div>
                      ETTORE SEBASTIANINI Instituto de Desenvolvimento Social Sustentavel. — ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável
                  </div>`,
@@ -730,17 +750,17 @@
             );
         
     
-                marker_4d92d5fe63cba0669ab4bd49a3c2f604.setIcon(div_icon_6b73e4450c7e043f253f853c668a6dcc);
+                marker_ad6e0371416427d49328c482d78a2ba5.setIcon(div_icon_01ee41fe22c67cd426a88d2e1e60aa17);
             
     
-            var marker_a5d01a3fb6640183614bb2e954c579cd = L.marker(
+            var marker_757fcc98cfcad6afa1e79ce9c287c567 = L.marker(
                 [-2.5448845201644805, -44.32802929569092],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_b480327fb42764905000e5a615b2dc95 = L.divIcon({
+            var div_icon_1804fe4b46feeb7efadb5e3ec6d7cd27 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -748,24 +768,24 @@
 });
         
     
-        var popup_1e78b6096fb92bb462965d549a0cfda0 = L.popup({
+        var popup_ddc35765b2a6ba0e02b82c84e653f8dd = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_716407117487013a3e3c0e0a01ead57a = $(`<div id="html_716407117487013a3e3c0e0a01ead57a" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Predio da FUNAC</b><br><i>Equipamento público — Outro</i><br>Bairro: Vila Ariri<br>Perto de: UEB Odilo Costa Filho<br>Endereço informado: Avenida Vale do Rio Doce, Alto da Esperança<br><b>Importa por:</b> memoria uso coletivo lazer alimentacao referencia organizacao servico outro<br><b>Desejo:</b> Reforma e adequação<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável</span></div></div>`)[0];
-                popup_1e78b6096fb92bb462965d549a0cfda0.setContent(html_716407117487013a3e3c0e0a01ead57a);
+                var html_9e33d34042689ab85dd5e5a501f04e43 = $(`<div id="html_9e33d34042689ab85dd5e5a501f04e43" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Predio da FUNAC</b><br><i>Equipamento público — Outro</i><br>Bairro: Vila Ariri<br>Perto de: UEB Odilo Costa Filho<br>Endereço informado: Avenida Vale do Rio Doce, Alto da Esperança<br><b>Importa por:</b> memoria uso coletivo lazer alimentacao referencia organizacao servico outro<br><b>Desejo:</b> Reforma e adequação<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável</span></div></div>`)[0];
+                popup_ddc35765b2a6ba0e02b82c84e653f8dd.setContent(html_9e33d34042689ab85dd5e5a501f04e43);
             
         
 
-        marker_a5d01a3fb6640183614bb2e954c579cd.bindPopup(popup_1e78b6096fb92bb462965d549a0cfda0)
+        marker_757fcc98cfcad6afa1e79ce9c287c567.bindPopup(popup_ddc35765b2a6ba0e02b82c84e653f8dd)
         ;
 
         
     
     
-            marker_a5d01a3fb6640183614bb2e954c579cd.bindTooltip(
+            marker_757fcc98cfcad6afa1e79ce9c287c567.bindTooltip(
                 `<div>
                      Predio da FUNAC — ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável
                  </div>`,
@@ -775,17 +795,17 @@
             );
         
     
-                marker_a5d01a3fb6640183614bb2e954c579cd.setIcon(div_icon_b480327fb42764905000e5a615b2dc95);
+                marker_757fcc98cfcad6afa1e79ce9c287c567.setIcon(div_icon_1804fe4b46feeb7efadb5e3ec6d7cd27);
             
     
-            var marker_a4e1a89c2d656d401c44dbf8d98983de = L.marker(
+            var marker_bc0ee12eae6fa488ebeeba7a887e90ca = L.marker(
                 [-2.5445831624964845, -44.328758795383436],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_e5db577801b0094f747c4a18abbb18ff = L.divIcon({
+            var div_icon_9263374c4b5524cb9980b379f6af5d34 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -793,24 +813,24 @@
 });
         
     
-        var popup_08b9e860b279796a15671f66db7c2e5c = L.popup({
+        var popup_7e4267860eb3e8e9333704e7ac84bf20 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_01d9742c8b152d49f74eddb7654f1608 = $(`<div id="html_01d9742c8b152d49f74eddb7654f1608" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Terreiro do Seu Roni</b><br><i>Espaço religioso — Terreiro</i><br>Bairro: Vila Ariri<br>Perto de: Proximo ACIB da Vila Ariri<br>Endereço informado: 3ª Travessa Benjamin Constant, Vila Ariri<br><b>Importa por:</b> fe outro<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável</span></div></div>`)[0];
-                popup_08b9e860b279796a15671f66db7c2e5c.setContent(html_01d9742c8b152d49f74eddb7654f1608);
+                var html_82dffa568bc4582bf0dcacd6f390cb6e = $(`<div id="html_82dffa568bc4582bf0dcacd6f390cb6e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Terreiro do Seu Roni</b><br><i>Espaço religioso — Terreiro</i><br>Bairro: Vila Ariri<br>Perto de: Proximo ACIB da Vila Ariri<br>Endereço informado: 3ª Travessa Benjamin Constant, Vila Ariri<br><b>Importa por:</b> fe outro<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável</span></div></div>`)[0];
+                popup_7e4267860eb3e8e9333704e7ac84bf20.setContent(html_82dffa568bc4582bf0dcacd6f390cb6e);
             
         
 
-        marker_a4e1a89c2d656d401c44dbf8d98983de.bindPopup(popup_08b9e860b279796a15671f66db7c2e5c)
+        marker_bc0ee12eae6fa488ebeeba7a887e90ca.bindPopup(popup_7e4267860eb3e8e9333704e7ac84bf20)
         ;
 
         
     
     
-            marker_a4e1a89c2d656d401c44dbf8d98983de.bindTooltip(
+            marker_bc0ee12eae6fa488ebeeba7a887e90ca.bindTooltip(
                 `<div>
                      Terreiro do Seu Roni — ETTORE SEBASTIANINI, Instituto de Desenvolvimento Social Sustentável
                  </div>`,
@@ -820,17 +840,17 @@
             );
         
     
-                marker_a4e1a89c2d656d401c44dbf8d98983de.setIcon(div_icon_e5db577801b0094f747c4a18abbb18ff);
+                marker_bc0ee12eae6fa488ebeeba7a887e90ca.setIcon(div_icon_9263374c4b5524cb9980b379f6af5d34);
             
     
-            var marker_3bef8462b381b96ab4a244b00226975e = L.marker(
+            var marker_ae1b11f2368a648d301dc84bc849e5eb = L.marker(
                 [-2.5742608850232567, -44.30891551129462],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_c92fed677ee32ffc44c73bd47a4b9016 = L.divIcon({
+            var div_icon_ad493212fb9f1b34edd92737864ee5bb = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -838,24 +858,24 @@
 });
         
     
-        var popup_45a8f1daa554dcbcaa7d61345defd38b = L.popup({
+        var popup_9456cf757d8754ea67845ddd2a0d65c5 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_cba2cdce82b2958eac7ad049af7b6ef1 = $(`<div id="html_cba2cdce82b2958eac7ad049af7b6ef1" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Arena Primavera</b><br><i>Equipamento público — Quadra esportiva</i><br>Bairro: Vila Embratel<br>Perto de: Arena Primavera<br>Endereço informado: Rua do Passeio - residencial Primavera<br><b>Importa por:</b> lazer<br><b>Desejo:</b> pudesse ser estruturado para ser uma area de lazer convencional para a comunidade. HOje é so um bando de areia que a comunidade joga bola.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Residencial Primavera</span></div></div>`)[0];
-                popup_45a8f1daa554dcbcaa7d61345defd38b.setContent(html_cba2cdce82b2958eac7ad049af7b6ef1);
+                var html_a924bed500851440821dabcdb7d4d5cb = $(`<div id="html_a924bed500851440821dabcdb7d4d5cb" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Arena Primavera</b><br><i>Equipamento público — Quadra esportiva</i><br>Bairro: Vila Embratel<br>Perto de: Arena Primavera<br>Endereço informado: Rua do Passeio - residencial Primavera<br><b>Importa por:</b> lazer<br><b>Desejo:</b> pudesse ser estruturado para ser uma area de lazer convencional para a comunidade. HOje é so um bando de areia que a comunidade joga bola.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Residencial Primavera</span></div></div>`)[0];
+                popup_9456cf757d8754ea67845ddd2a0d65c5.setContent(html_a924bed500851440821dabcdb7d4d5cb);
             
         
 
-        marker_3bef8462b381b96ab4a244b00226975e.bindPopup(popup_45a8f1daa554dcbcaa7d61345defd38b)
+        marker_ae1b11f2368a648d301dc84bc849e5eb.bindPopup(popup_9456cf757d8754ea67845ddd2a0d65c5)
         ;
 
         
     
     
-            marker_3bef8462b381b96ab4a244b00226975e.bindTooltip(
+            marker_ae1b11f2368a648d301dc84bc849e5eb.bindTooltip(
                 `<div>
                      Arena Primavera — União dos Moradores do Residencial Primavera
                  </div>`,
@@ -865,17 +885,17 @@
             );
         
     
-                marker_3bef8462b381b96ab4a244b00226975e.setIcon(div_icon_c92fed677ee32ffc44c73bd47a4b9016);
+                marker_ae1b11f2368a648d301dc84bc849e5eb.setIcon(div_icon_ad493212fb9f1b34edd92737864ee5bb);
             
     
-            var marker_d9de2df79702c88485b18073fd9bd7e8 = L.marker(
+            var marker_8f1415023482d21d76858ee2117408df = L.marker(
                 [-2.5753190229680016, -44.30951854945886],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_be6e4de496e9081dd4e3ea79ec51b12b = L.divIcon({
+            var div_icon_22724a05a8db19ff41c6f139b1691c75 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -883,24 +903,24 @@
 });
         
     
-        var popup_b16891c3c1a933a3a62d8db0a138ee6c = L.popup({
+        var popup_438fe6e1a4eaeb74bc4d69074fa64b24 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2c81aa3d2cf555aefcfef9345d17656f = $(`<div id="html_2c81aa3d2cf555aefcfef9345d17656f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>União dos Moradores do Residencial Primavera</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Embratel<br>Perto de: União dos Moradores do Residencial Primavera<br>Endereço informado: Rua do Passeio N. 09.<br><b>Importa por:</b> memoria uso coletivo referencia organizacao servico<br><b>Desejo:</b> ampliar o trabalho que já é realizado nesse espaço.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Residencial Primavera</span></div></div>`)[0];
-                popup_b16891c3c1a933a3a62d8db0a138ee6c.setContent(html_2c81aa3d2cf555aefcfef9345d17656f);
+                var html_21bea453cae610b1467dd532558cc6b0 = $(`<div id="html_21bea453cae610b1467dd532558cc6b0" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>União dos Moradores do Residencial Primavera</b><br><i>Organização de Base Comunitária</i><br>Bairro: Vila Embratel<br>Perto de: União dos Moradores do Residencial Primavera<br>Endereço informado: Rua do Passeio N. 09.<br><b>Importa por:</b> memoria uso coletivo referencia organizacao servico<br><b>Desejo:</b> ampliar o trabalho que já é realizado nesse espaço.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Residencial Primavera</span></div></div>`)[0];
+                popup_438fe6e1a4eaeb74bc4d69074fa64b24.setContent(html_21bea453cae610b1467dd532558cc6b0);
             
         
 
-        marker_d9de2df79702c88485b18073fd9bd7e8.bindPopup(popup_b16891c3c1a933a3a62d8db0a138ee6c)
+        marker_8f1415023482d21d76858ee2117408df.bindPopup(popup_438fe6e1a4eaeb74bc4d69074fa64b24)
         ;
 
         
     
     
-            marker_d9de2df79702c88485b18073fd9bd7e8.bindTooltip(
+            marker_8f1415023482d21d76858ee2117408df.bindTooltip(
                 `<div>
                      União dos Moradores do Residencial Primavera — União dos Moradores do Residencial Primavera
                  </div>`,
@@ -910,17 +930,17 @@
             );
         
     
-                marker_d9de2df79702c88485b18073fd9bd7e8.setIcon(div_icon_be6e4de496e9081dd4e3ea79ec51b12b);
+                marker_8f1415023482d21d76858ee2117408df.setIcon(div_icon_22724a05a8db19ff41c6f139b1691c75);
             
     
-            var marker_81988600b9b310cc1b2edb8076aaf86a = L.marker(
+            var marker_326a9ae3e497123f0fa034781e66da68 = L.marker(
                 [-2.5716428796383464, -44.294878689745914],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_d2cd01cf55de89d21a41497c9f16107b = L.divIcon({
+            var div_icon_dbb1be14fe0b3378cb856789a0724f41 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -928,24 +948,24 @@
 });
         
     
-        var popup_8bbcc0fa6a45b10ddd28d3db423262cd = L.popup({
+        var popup_a6360d469d4e3f2c4eea7810ab71c643 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_7cba53f03a7982c35652c638f66cfa45 = $(`<div id="html_7cba53f03a7982c35652c638f66cfa45" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Dra. Valdecy Eoletéria Martins</b><br><i>Equipamento público — Outro</i><br>Bairro: Residencial Paraíso<br>Perto de: Início do bairro<br>Endereço informado: Avenida Paraíso, S/N<br><b>Importa por:</b> servico<br><b>Desejo:</b> Ampliação de atendimento<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Rosa Dália</span></div></div>`)[0];
-                popup_8bbcc0fa6a45b10ddd28d3db423262cd.setContent(html_7cba53f03a7982c35652c638f66cfa45);
+                var html_f33a5faef182d3ffa7ac9470d8bb0fe8 = $(`<div id="html_f33a5faef182d3ffa7ac9470d8bb0fe8" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Dra. Valdecy Eoletéria Martins</b><br><i>Equipamento público — Outro</i><br>Bairro: Residencial Paraíso<br>Perto de: Início do bairro<br>Endereço informado: Avenida Paraíso, S/N<br><b>Importa por:</b> servico<br><b>Desejo:</b> Ampliação de atendimento<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Rosa Dália</span></div></div>`)[0];
+                popup_a6360d469d4e3f2c4eea7810ab71c643.setContent(html_f33a5faef182d3ffa7ac9470d8bb0fe8);
             
         
 
-        marker_81988600b9b310cc1b2edb8076aaf86a.bindPopup(popup_8bbcc0fa6a45b10ddd28d3db423262cd)
+        marker_326a9ae3e497123f0fa034781e66da68.bindPopup(popup_a6360d469d4e3f2c4eea7810ab71c643)
         ;
 
         
     
     
-            marker_81988600b9b310cc1b2edb8076aaf86a.bindTooltip(
+            marker_326a9ae3e497123f0fa034781e66da68.bindTooltip(
                 `<div>
                      Dra. Valdecy Eoletéria Martins — Instituto Rosa Dália
                  </div>`,
@@ -955,17 +975,17 @@
             );
         
     
-                marker_81988600b9b310cc1b2edb8076aaf86a.setIcon(div_icon_d2cd01cf55de89d21a41497c9f16107b);
+                marker_326a9ae3e497123f0fa034781e66da68.setIcon(div_icon_dbb1be14fe0b3378cb856789a0724f41);
             
     
-            var marker_0acf9d95aa7fce0c3f38d7ae22d0ad35 = L.marker(
+            var marker_0318589a2ccf5b709ee5581bd97c6f6a = L.marker(
                 [-2.5589052091605424, -44.30710078555229],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_62ab476e7d1ae0919dca2d46f67ae74f = L.divIcon({
+            var div_icon_9de747ea8c77df21fa46727286984337 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -973,24 +993,24 @@
 });
         
     
-        var popup_71d04dfdc33806d9f25344483ffc0f4d = L.popup({
+        var popup_88381ad46670facaf166d83e701afebb = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_f6edf70ff1365c1f6df2e4cd279df124 = $(`<div id="html_f6edf70ff1365c1f6df2e4cd279df124" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Orla Marítima do Sá Viana</b><br><img src="fotos/899753046_orla_mar_tima_do_s__viana.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Natureza</i><br>Bairro: Sá Viana<br>Perto de: Praia do Gaspar<br>Endereço informado: Avenida Tomaz de Aquino Andrade, n° 455<br><b>Importa por:</b> memoria renda lazer turismo m biodiversidade referencia<br><b>Desejo:</b> Que se fizesse a revitalização da área do Rio Bacanga, limpeza, saneamento básico, reestruturar a pavimentação da calçada dos pedestres, equipamento para fazer atividades físicas.<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Clube de Mães Nossa Senhora da Vitória</span></div></div>`)[0];
-                popup_71d04dfdc33806d9f25344483ffc0f4d.setContent(html_f6edf70ff1365c1f6df2e4cd279df124);
+                var html_ecfbe2160045e915c835dec855daf06e = $(`<div id="html_ecfbe2160045e915c835dec855daf06e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Orla Marítima do Sá Viana</b><br><img src="fotos/899753046_orla_mar_tima_do_s__viana.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Natureza</i><br>Bairro: Sá Viana<br>Perto de: Praia do Gaspar<br>Endereço informado: Avenida Tomaz de Aquino Andrade, n° 455<br><b>Importa por:</b> memoria renda lazer turismo m biodiversidade referencia<br><b>Desejo:</b> Que se fizesse a revitalização da área do Rio Bacanga, limpeza, saneamento básico, reestruturar a pavimentação da calçada dos pedestres, equipamento para fazer atividades físicas.<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Clube de Mães Nossa Senhora da Vitória</span></div></div>`)[0];
+                popup_88381ad46670facaf166d83e701afebb.setContent(html_ecfbe2160045e915c835dec855daf06e);
             
         
 
-        marker_0acf9d95aa7fce0c3f38d7ae22d0ad35.bindPopup(popup_71d04dfdc33806d9f25344483ffc0f4d)
+        marker_0318589a2ccf5b709ee5581bd97c6f6a.bindPopup(popup_88381ad46670facaf166d83e701afebb)
         ;
 
         
     
     
-            marker_0acf9d95aa7fce0c3f38d7ae22d0ad35.bindTooltip(
+            marker_0318589a2ccf5b709ee5581bd97c6f6a.bindTooltip(
                 `<div>
                      Orla Marítima do Sá Viana — Clube de Mães Nossa Senhora da Vitória
                  </div>`,
@@ -1000,17 +1020,17 @@
             );
         
     
-                marker_0acf9d95aa7fce0c3f38d7ae22d0ad35.setIcon(div_icon_62ab476e7d1ae0919dca2d46f67ae74f);
+                marker_0318589a2ccf5b709ee5581bd97c6f6a.setIcon(div_icon_9de747ea8c77df21fa46727286984337);
             
     
-            var marker_26a0f54343ef396d7c8e58c1b2dc9d41 = L.marker(
+            var marker_a8c342ff0ed361c71401550701955c92 = L.marker(
                 [-2.620749440794816, -44.31705949072458],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_341bf5efd4dc991a601d77535a4a0919 = L.divIcon({
+            var div_icon_16c99b3860c372285d2a4a0854b83df4 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1018,24 +1038,24 @@
 });
         
     
-        var popup_34fb722e067081321caf12a9c57fd594 = L.popup({
+        var popup_f96ccf03dfb6ad9633af4cd08a489f0a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_1771c3717be2f9b95ae92ad32aba2d22 = $(`<div id="html_1771c3717be2f9b95ae92ad32aba2d22" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Arapapai</b><br><i>Outro</i><br>Bairro: Vila Maranhão<br>Perto de: Ao lado da empresa quali água<br>Endereço informado: Estrada do cajueiro<br><b>Importa por:</b> memoria uso coletivo biodiversidade<br><b>Desejo:</b> Que o Poder Publico olhassem mais pra essa comunidade pois são esquecidos de tudo, principalmente no inverno onde não consegue sair de suas casas por alagamentos constantes.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Moradores do Jardim São Joaquim</span></div></div>`)[0];
-                popup_34fb722e067081321caf12a9c57fd594.setContent(html_1771c3717be2f9b95ae92ad32aba2d22);
+                var html_d4313a7bf6358d20490a876567a52f58 = $(`<div id="html_d4313a7bf6358d20490a876567a52f58" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Arapapai</b><br><i>Outro</i><br>Bairro: Vila Maranhão<br>Perto de: Ao lado da empresa quali água<br>Endereço informado: Estrada do cajueiro<br><b>Importa por:</b> memoria uso coletivo biodiversidade<br><b>Desejo:</b> Que o Poder Publico olhassem mais pra essa comunidade pois são esquecidos de tudo, principalmente no inverno onde não consegue sair de suas casas por alagamentos constantes.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Moradores do Jardim São Joaquim</span></div></div>`)[0];
+                popup_f96ccf03dfb6ad9633af4cd08a489f0a.setContent(html_d4313a7bf6358d20490a876567a52f58);
             
         
 
-        marker_26a0f54343ef396d7c8e58c1b2dc9d41.bindPopup(popup_34fb722e067081321caf12a9c57fd594)
+        marker_a8c342ff0ed361c71401550701955c92.bindPopup(popup_f96ccf03dfb6ad9633af4cd08a489f0a)
         ;
 
         
     
     
-            marker_26a0f54343ef396d7c8e58c1b2dc9d41.bindTooltip(
+            marker_a8c342ff0ed361c71401550701955c92.bindTooltip(
                 `<div>
                      Arapapai — Associação dos Moradores do Jardim São Joaquim
                  </div>`,
@@ -1045,17 +1065,17 @@
             );
         
     
-                marker_26a0f54343ef396d7c8e58c1b2dc9d41.setIcon(div_icon_341bf5efd4dc991a601d77535a4a0919);
+                marker_a8c342ff0ed361c71401550701955c92.setIcon(div_icon_16c99b3860c372285d2a4a0854b83df4);
             
     
-            var marker_8d459e68fdcea9b118f6a36446adee2c = L.marker(
+            var marker_ada9affc01d25eeec26f6879bfe268e0 = L.marker(
                 [-2.62100752087575, -44.31682307018439],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_053ff62bb9cf94e02e413947e688d8c9 = L.divIcon({
+            var div_icon_3eecead0b045c154fbdf01e5e0976684 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1063,24 +1083,24 @@
 });
         
     
-        var popup_e0dadedbf56d3e43ad83777d0060a983 = L.popup({
+        var popup_e0dc742334df286cdcac44f35454922b = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_6008cde9fe537266816e82ab14a3df55 = $(`<div id="html_6008cde9fe537266816e82ab14a3df55" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Jardim São Joaquim</b><br><i>Outro</i><br>Bairro: Vila Maranhão<br>Perto de: Enfrente a empresa Lucena<br>Endereço informado: Avenida Emiliano Macieira<br><b>Importa por:</b> memoria servico<br><b>Desejo:</b> Gostaria de ter uma praça para as crianças está brincando,só temos o local,saneamento básico.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Moradores do Jardim São Joaquim</span></div></div>`)[0];
-                popup_e0dadedbf56d3e43ad83777d0060a983.setContent(html_6008cde9fe537266816e82ab14a3df55);
+                var html_aa6444027716a4244b057b24a4065c50 = $(`<div id="html_aa6444027716a4244b057b24a4065c50" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Jardim São Joaquim</b><br><i>Outro</i><br>Bairro: Vila Maranhão<br>Perto de: Enfrente a empresa Lucena<br>Endereço informado: Avenida Emiliano Macieira<br><b>Importa por:</b> memoria servico<br><b>Desejo:</b> Gostaria de ter uma praça para as crianças está brincando,só temos o local,saneamento básico.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Moradores do Jardim São Joaquim</span></div></div>`)[0];
+                popup_e0dc742334df286cdcac44f35454922b.setContent(html_aa6444027716a4244b057b24a4065c50);
             
         
 
-        marker_8d459e68fdcea9b118f6a36446adee2c.bindPopup(popup_e0dadedbf56d3e43ad83777d0060a983)
+        marker_ada9affc01d25eeec26f6879bfe268e0.bindPopup(popup_e0dc742334df286cdcac44f35454922b)
         ;
 
         
     
     
-            marker_8d459e68fdcea9b118f6a36446adee2c.bindTooltip(
+            marker_ada9affc01d25eeec26f6879bfe268e0.bindTooltip(
                 `<div>
                      Jardim São Joaquim — Associação dos Moradores do Jardim São Joaquim
                  </div>`,
@@ -1090,17 +1110,17 @@
             );
         
     
-                marker_8d459e68fdcea9b118f6a36446adee2c.setIcon(div_icon_053ff62bb9cf94e02e413947e688d8c9);
+                marker_ada9affc01d25eeec26f6879bfe268e0.setIcon(div_icon_3eecead0b045c154fbdf01e5e0976684);
             
     
-            var marker_c6de4baf106879ea0fcca7fe61ff920e = L.marker(
+            var marker_3a6c920f98b133ffdaf6e556b6aba0d3 = L.marker(
                 [-2.620706163207754, -44.31755256987691],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_2ae9f16d614667697fb370e939cdb059 = L.divIcon({
+            var div_icon_9e5b6ba27b17e04dbbc297a86e10f037 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1108,24 +1128,24 @@
 });
         
     
-        var popup_2537753bc6bb40805b8afff8c9f20dca = L.popup({
+        var popup_d88f471c90f703506e98fe4de188fb79 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_cff78e1a1e78f81b088ccc52fc687036 = $(`<div id="html_cff78e1a1e78f81b088ccc52fc687036" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Sítio jacu</b><br><i>Outro</i><br>Bairro: Vila Maranhão<br>Perto de: Próximo aos condomínios do Vila Maranhão<br>Endereço informado: Avenida Evandro Bessa<br><b>Importa por:</b> memoria alimentacao biodiversidade<br><b>Desejo:</b> Acostamento pois é uma ária com muito indece de acidentes  e falta de iluminação pública pois em cima do viaduto é tirados os fios para tá fazendo fazendo assaltos. Precisa também do posto policial.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Moradores do Jardim São Joaquim</span></div></div>`)[0];
-                popup_2537753bc6bb40805b8afff8c9f20dca.setContent(html_cff78e1a1e78f81b088ccc52fc687036);
+                var html_d6e209de730e049500858895220e296b = $(`<div id="html_d6e209de730e049500858895220e296b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Sítio jacu</b><br><i>Outro</i><br>Bairro: Vila Maranhão<br>Perto de: Próximo aos condomínios do Vila Maranhão<br>Endereço informado: Avenida Evandro Bessa<br><b>Importa por:</b> memoria alimentacao biodiversidade<br><b>Desejo:</b> Acostamento pois é uma ária com muito indece de acidentes  e falta de iluminação pública pois em cima do viaduto é tirados os fios para tá fazendo fazendo assaltos. Precisa também do posto policial.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Moradores do Jardim São Joaquim</span></div></div>`)[0];
+                popup_d88f471c90f703506e98fe4de188fb79.setContent(html_d6e209de730e049500858895220e296b);
             
         
 
-        marker_c6de4baf106879ea0fcca7fe61ff920e.bindPopup(popup_2537753bc6bb40805b8afff8c9f20dca)
+        marker_3a6c920f98b133ffdaf6e556b6aba0d3.bindPopup(popup_d88f471c90f703506e98fe4de188fb79)
         ;
 
         
     
     
-            marker_c6de4baf106879ea0fcca7fe61ff920e.bindTooltip(
+            marker_3a6c920f98b133ffdaf6e556b6aba0d3.bindTooltip(
                 `<div>
                      Sítio jacu — Associação dos Moradores do Jardim São Joaquim
                  </div>`,
@@ -1135,17 +1155,17 @@
             );
         
     
-                marker_c6de4baf106879ea0fcca7fe61ff920e.setIcon(div_icon_2ae9f16d614667697fb370e939cdb059);
+                marker_3a6c920f98b133ffdaf6e556b6aba0d3.setIcon(div_icon_9e5b6ba27b17e04dbbc297a86e10f037);
             
     
-            var marker_fa8863c529927d841c9dd98180d434c2 = L.marker(
+            var marker_28bd5d3452868d690abe3c7de9b4e9ab = L.marker(
                 [-2.5585363686469864, -44.30661968610772],
                 {
 }
-            ).addTo(feature_group_3e68526b1d02d5f827a306902f8baa1b);
+            ).addTo(feature_group_f4da2ef0e4f9b976da3b707913eaad63);
         
     
-            var div_icon_a100080c3df7f8b879e758fb6e3881c4 = L.divIcon({
+            var div_icon_9e6af7cefe10b261fe4d2acb047f9329 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2605\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1153,24 +1173,24 @@
 });
         
     
-        var popup_2c882e72a7902e9816c5c97ebf048c3c = L.popup({
+        var popup_d1c88ec1231b4a16c8405b8b8b774f42 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_de3d52de6367afd97e74a718cdbc3880 = $(`<div id="html_de3d52de6367afd97e74a718cdbc3880" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>praça alto mirante</b><br><i>Natureza</i><br>Bairro: Sá Viana<br>Perto de: final da rua militana ferreira, malvina<br>Endereço informado: rua  militana ferreira<br><b>Importa por:</b> memoria uso coletivo lazer<br><b>Desejo:</b> melhorias pois tem uma vista brilhante para mar<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Bairro Sá Viana</span></div></div>`)[0];
-                popup_2c882e72a7902e9816c5c97ebf048c3c.setContent(html_de3d52de6367afd97e74a718cdbc3880);
+                var html_60d1e301cc4824c2c770f924085e7603 = $(`<div id="html_60d1e301cc4824c2c770f924085e7603" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>praça alto mirante</b><br><i>Natureza</i><br>Bairro: Sá Viana<br>Perto de: final da rua militana ferreira, malvina<br>Endereço informado: rua  militana ferreira<br><b>Importa por:</b> memoria uso coletivo lazer<br><b>Desejo:</b> melhorias pois tem uma vista brilhante para mar<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Bairro Sá Viana</span></div></div>`)[0];
+                popup_d1c88ec1231b4a16c8405b8b8b774f42.setContent(html_60d1e301cc4824c2c770f924085e7603);
             
         
 
-        marker_fa8863c529927d841c9dd98180d434c2.bindPopup(popup_2c882e72a7902e9816c5c97ebf048c3c)
+        marker_28bd5d3452868d690abe3c7de9b4e9ab.bindPopup(popup_d1c88ec1231b4a16c8405b8b8b774f42)
         ;
 
         
     
     
-            marker_fa8863c529927d841c9dd98180d434c2.bindTooltip(
+            marker_28bd5d3452868d690abe3c7de9b4e9ab.bindTooltip(
                 `<div>
                      praça alto mirante — União dos Moradores do Bairro Sá Viana
                  </div>`,
@@ -1180,26 +1200,26 @@
             );
         
     
-                marker_fa8863c529927d841c9dd98180d434c2.setIcon(div_icon_a100080c3df7f8b879e758fb6e3881c4);
+                marker_28bd5d3452868d690abe3c7de9b4e9ab.setIcon(div_icon_9e6af7cefe10b261fe4d2acb047f9329);
             
     
-            feature_group_3e68526b1d02d5f827a306902f8baa1b.addTo(map_959d48e33a57bf895b3e6d91489bbf7f);
+            feature_group_f4da2ef0e4f9b976da3b707913eaad63.addTo(map_4b5c44eaf60db09e9647c55272427deb);
         
     
-            var feature_group_0dd49f58c31704d149e1f96b9085ed74 = L.featureGroup(
+            var feature_group_9ce97e9a8463c59f21be8f1c694e0063 = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_11ca53ec0f9092e6a5497fb70686a393 = L.marker(
+            var marker_ff42702addd75030aec3ab2b67df3c0c = L.marker(
                 [-2.6181321971869553, -44.35145362803223],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_b7d7134285617a6def62510c800f3002 = L.divIcon({
+            var div_icon_5feae10bf9074bec1e9213f84259b64d = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1207,24 +1227,24 @@
 });
         
     
-        var popup_87907baa28db21b5d1688227e31e0209 = L.popup({
+        var popup_dd253dcceb99103b64b03cde9140b71e = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_1139d76ee1eaed0886b7dcfb07de65db = $(`<div id="html_1139d76ee1eaed0886b7dcfb07de65db" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Boaventura, um dos moradores mais antigos e um dos fundadores da comunidade do Cajueiro.</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Cajueiro<br>Onde encontrar: Ele não está mais entre nós, já é falecido.<br><b>Por que é importante:</b> Boaventura foi uma pessoa importante na história da comunidade do Cajueiro. Como um dos seus fundadores e moradores mais antigos, fez parte da construção da história e das raízes desse território. Mesmo após seu falecimento, seu legado permanece vivo por meio de sua história, de seus ensinamentos, de sua família e das gerações que deixou. Sua trajetória representa a memória, a identidade e o sentimento de pertencimento de um povo que carrega com orgulho suas origens.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Manancial do Cajueiro</span></div></div>`)[0];
-                popup_87907baa28db21b5d1688227e31e0209.setContent(html_1139d76ee1eaed0886b7dcfb07de65db);
+                var html_ee623941fcc276a87ad5eefd037f1afd = $(`<div id="html_ee623941fcc276a87ad5eefd037f1afd" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Boaventura, um dos moradores mais antigos e um dos fundadores da comunidade do Cajueiro.</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Cajueiro<br>Onde encontrar: Ele não está mais entre nós, já é falecido.<br><b>Por que é importante:</b> Boaventura foi uma pessoa importante na história da comunidade do Cajueiro. Como um dos seus fundadores e moradores mais antigos, fez parte da construção da história e das raízes desse território. Mesmo após seu falecimento, seu legado permanece vivo por meio de sua história, de seus ensinamentos, de sua família e das gerações que deixou. Sua trajetória representa a memória, a identidade e o sentimento de pertencimento de um povo que carrega com orgulho suas origens.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Manancial do Cajueiro</span></div></div>`)[0];
+                popup_dd253dcceb99103b64b03cde9140b71e.setContent(html_ee623941fcc276a87ad5eefd037f1afd);
             
         
 
-        marker_11ca53ec0f9092e6a5497fb70686a393.bindPopup(popup_87907baa28db21b5d1688227e31e0209)
+        marker_ff42702addd75030aec3ab2b67df3c0c.bindPopup(popup_dd253dcceb99103b64b03cde9140b71e)
         ;
 
         
     
     
-            marker_11ca53ec0f9092e6a5497fb70686a393.bindTooltip(
+            marker_ff42702addd75030aec3ab2b67df3c0c.bindTooltip(
                 `<div>
                      Boaventura, um dos moradores mais antigos e um dos fundadores da comunidade do Cajueiro. — Instituto Manancial do Cajueiro
                  </div>`,
@@ -1234,17 +1254,17 @@
             );
         
     
-                marker_11ca53ec0f9092e6a5497fb70686a393.setIcon(div_icon_b7d7134285617a6def62510c800f3002);
+                marker_ff42702addd75030aec3ab2b67df3c0c.setIcon(div_icon_5feae10bf9074bec1e9213f84259b64d);
             
     
-            var marker_ef2a5ad5c029f2e73ba8abf8e38e4751 = L.marker(
+            var marker_0824a316fe97c434f34abbeb40309916 = L.marker(
                 [-2.546581248078452, -44.3293046265984],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_c03667e18f546b5a4a58fc7bf48180d4 = L.divIcon({
+            var div_icon_7a3b944f5e7c8a70b84d85033acda87a = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1252,24 +1272,24 @@
 });
         
     
-        var popup_51a90f7b84e668e309685fd4444bbc83 = L.popup({
+        var popup_b944a0138d14424bee3f944a970fc960 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_9ef6d1d573ced252d9f635a741ac942c = $(`<div id="html_9ef6d1d573ced252d9f635a741ac942c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Castro</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila São Luís<br>Onde encontrar: Morador ao entorno da praça<br><b>Por que é importante:</b> Esta pessoa é um morador do bairro e líder comunitário desde a fundação da comunidade , lutou por varias pautas pela comunidade , como a implantação da praça e do campo.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
-                popup_51a90f7b84e668e309685fd4444bbc83.setContent(html_9ef6d1d573ced252d9f635a741ac942c);
+                var html_87721da0d3c4880dbe060e028f616014 = $(`<div id="html_87721da0d3c4880dbe060e028f616014" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Castro</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila São Luís<br>Onde encontrar: Morador ao entorno da praça<br><b>Por que é importante:</b> Esta pessoa é um morador do bairro e líder comunitário desde a fundação da comunidade , lutou por varias pautas pela comunidade , como a implantação da praça e do campo.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
+                popup_b944a0138d14424bee3f944a970fc960.setContent(html_87721da0d3c4880dbe060e028f616014);
             
         
 
-        marker_ef2a5ad5c029f2e73ba8abf8e38e4751.bindPopup(popup_51a90f7b84e668e309685fd4444bbc83)
+        marker_0824a316fe97c434f34abbeb40309916.bindPopup(popup_b944a0138d14424bee3f944a970fc960)
         ;
 
         
     
     
-            marker_ef2a5ad5c029f2e73ba8abf8e38e4751.bindTooltip(
+            marker_0824a316fe97c434f34abbeb40309916.bindTooltip(
                 `<div>
                      Castro — Grupo União de Mulheres Empreendedoras (GUME)
                  </div>`,
@@ -1279,17 +1299,17 @@
             );
         
     
-                marker_ef2a5ad5c029f2e73ba8abf8e38e4751.setIcon(div_icon_c03667e18f546b5a4a58fc7bf48180d4);
+                marker_0824a316fe97c434f34abbeb40309916.setIcon(div_icon_7a3b944f5e7c8a70b84d85033acda87a);
             
     
-            var marker_c70af20da7b5f3d40f0c18e36e8d3666 = L.marker(
+            var marker_0961e5cb80768a71a88d4a7a25f23ac6 = L.marker(
                 [-2.546279890410456, -44.33003412629092],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_1b508cd3476375df8317ce3f41b58f09 = L.divIcon({
+            var div_icon_fca0a299d0f3d6ad8c7e75004cad4d4c = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1297,24 +1317,24 @@
 });
         
     
-        var popup_4fc46fe6bcb16e0a75d6ed9f3ff41940 = L.popup({
+        var popup_fa4015cf746366c6790fe40d9a490fa8 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_991a1df5489aafa8e54102d15133366b = $(`<div id="html_991a1df5489aafa8e54102d15133366b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Enilson Ribeiro</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila São Luís<br>Onde encontrar: encontrado na organização e na igreja<br><b>Por que é importante:</b> jovem militante e defensor dos direitos humanos morador do bairro , já trouxe para o bairro várias ações culturais e sociais.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
-                popup_4fc46fe6bcb16e0a75d6ed9f3ff41940.setContent(html_991a1df5489aafa8e54102d15133366b);
+                var html_c1847980cdccf1807fda5a68812ea04c = $(`<div id="html_c1847980cdccf1807fda5a68812ea04c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Enilson Ribeiro</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila São Luís<br>Onde encontrar: encontrado na organização e na igreja<br><b>Por que é importante:</b> jovem militante e defensor dos direitos humanos morador do bairro , já trouxe para o bairro várias ações culturais e sociais.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
+                popup_fa4015cf746366c6790fe40d9a490fa8.setContent(html_c1847980cdccf1807fda5a68812ea04c);
             
         
 
-        marker_c70af20da7b5f3d40f0c18e36e8d3666.bindPopup(popup_4fc46fe6bcb16e0a75d6ed9f3ff41940)
+        marker_0961e5cb80768a71a88d4a7a25f23ac6.bindPopup(popup_fa4015cf746366c6790fe40d9a490fa8)
         ;
 
         
     
     
-            marker_c70af20da7b5f3d40f0c18e36e8d3666.bindTooltip(
+            marker_0961e5cb80768a71a88d4a7a25f23ac6.bindTooltip(
                 `<div>
                      Enilson Ribeiro — Grupo União de Mulheres Empreendedoras (GUME)
                  </div>`,
@@ -1324,17 +1344,17 @@
             );
         
     
-                marker_c70af20da7b5f3d40f0c18e36e8d3666.setIcon(div_icon_1b508cd3476375df8317ce3f41b58f09);
+                marker_0961e5cb80768a71a88d4a7a25f23ac6.setIcon(div_icon_fca0a299d0f3d6ad8c7e75004cad4d4c);
             
     
-            var marker_f7cf577d070bcaa2af5affeb8fcfceb7 = L.marker(
+            var marker_71f189b0d89c93ca4992e534e7a8fc0a = L.marker(
                 [-2.545954327483962, -44.32905994769403],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_1fd00e88929dcf3abd4d8d392c2dbbd5 = L.divIcon({
+            var div_icon_6bda0ff50b2958adce8292a8cc2f0976 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1342,24 +1362,24 @@
 });
         
     
-        var popup_5e0573a9dd0b46bca75d5ab9969aeca1 = L.popup({
+        var popup_32856b7d82b60a2ee3a133a24f09d467 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_dea78fbb272c197357f2a0675793816d = $(`<div id="html_dea78fbb272c197357f2a0675793816d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Kelia Barbosa</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila São Luís<br>Onde encontrar: Igreja<br><b>Por que é importante:</b> Por ser moradora e incentivadora no esporte  através do futebol , além de liderança religiosa do bairro.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
-                popup_5e0573a9dd0b46bca75d5ab9969aeca1.setContent(html_dea78fbb272c197357f2a0675793816d);
+                var html_4c21c6eb78280f78717b00e137068fa4 = $(`<div id="html_4c21c6eb78280f78717b00e137068fa4" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Kelia Barbosa</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila São Luís<br>Onde encontrar: Igreja<br><b>Por que é importante:</b> Por ser moradora e incentivadora no esporte  através do futebol , além de liderança religiosa do bairro.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Grupo União de Mulheres Empreendedoras (GUME)</span></div></div>`)[0];
+                popup_32856b7d82b60a2ee3a133a24f09d467.setContent(html_4c21c6eb78280f78717b00e137068fa4);
             
         
 
-        marker_f7cf577d070bcaa2af5affeb8fcfceb7.bindPopup(popup_5e0573a9dd0b46bca75d5ab9969aeca1)
+        marker_71f189b0d89c93ca4992e534e7a8fc0a.bindPopup(popup_32856b7d82b60a2ee3a133a24f09d467)
         ;
 
         
     
     
-            marker_f7cf577d070bcaa2af5affeb8fcfceb7.bindTooltip(
+            marker_71f189b0d89c93ca4992e534e7a8fc0a.bindTooltip(
                 `<div>
                      Kelia Barbosa — Grupo União de Mulheres Empreendedoras (GUME)
                  </div>`,
@@ -1369,17 +1389,17 @@
             );
         
     
-                marker_f7cf577d070bcaa2af5affeb8fcfceb7.setIcon(div_icon_1fd00e88929dcf3abd4d8d392c2dbbd5);
+                marker_71f189b0d89c93ca4992e534e7a8fc0a.setIcon(div_icon_6bda0ff50b2958adce8292a8cc2f0976);
             
     
-            var marker_aa29ee0fe76e3baebc4e393276c6300b = L.marker(
+            var marker_885e7eb0856e9b53a4bf88d0f00581f2 = L.marker(
                 [-2.688421879446716, -44.30428719536425],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_900aa687aca4aef926372042fd9949b8 = L.divIcon({
+            var div_icon_5e406f6964d25e263e6f956d6da0494d = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1387,24 +1407,24 @@
 });
         
     
-        var popup_1138adebed8dcda5efefab9327efa0f7 = L.popup({
+        var popup_31f6b3294eaee02d4d542cae2536947b = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_203ceb57b745e62d9899fee8442b44dc = $(`<div id="html_203ceb57b745e62d9899fee8442b44dc" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Antonio de Jesus Sousa Amorim</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Pedrinhas<br>Onde encontrar: Por todo território de Laranjeiras, em especial na sede da Associação<br><b>Por que é importante:</b> É importante por representar os moradores, defender os interesses da comunidade e articular parcerias e iniciativas que promovam melhorias na qualidade de vida das famílias do Assentamento Laranjeiras.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
-                popup_1138adebed8dcda5efefab9327efa0f7.setContent(html_203ceb57b745e62d9899fee8442b44dc);
+                var html_694957d12df1fa15d44e6171ad0c6515 = $(`<div id="html_694957d12df1fa15d44e6171ad0c6515" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Antonio de Jesus Sousa Amorim</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Pedrinhas<br>Onde encontrar: Por todo território de Laranjeiras, em especial na sede da Associação<br><b>Por que é importante:</b> É importante por representar os moradores, defender os interesses da comunidade e articular parcerias e iniciativas que promovam melhorias na qualidade de vida das famílias do Assentamento Laranjeiras.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
+                popup_31f6b3294eaee02d4d542cae2536947b.setContent(html_694957d12df1fa15d44e6171ad0c6515);
             
         
 
-        marker_aa29ee0fe76e3baebc4e393276c6300b.bindPopup(popup_1138adebed8dcda5efefab9327efa0f7)
+        marker_885e7eb0856e9b53a4bf88d0f00581f2.bindPopup(popup_31f6b3294eaee02d4d542cae2536947b)
         ;
 
         
     
     
-            marker_aa29ee0fe76e3baebc4e393276c6300b.bindTooltip(
+            marker_885e7eb0856e9b53a4bf88d0f00581f2.bindTooltip(
                 `<div>
                      Antonio de Jesus Sousa Amorim — Associação dos Pequenos Produtores Rurais de Laranjeiras
                  </div>`,
@@ -1414,17 +1434,17 @@
             );
         
     
-                marker_aa29ee0fe76e3baebc4e393276c6300b.setIcon(div_icon_900aa687aca4aef926372042fd9949b8);
+                marker_885e7eb0856e9b53a4bf88d0f00581f2.setIcon(div_icon_5e406f6964d25e263e6f956d6da0494d);
             
     
-            var marker_409d2a306dd7ff87a37b88b0bbb36158 = L.marker(
+            var marker_470c066cded9274c0b9736ff4b745c08 = L.marker(
                 [-2.68805303893316, -44.30380609591969],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_3ccc57d12d49060a2fc8b50cb74dab80 = L.divIcon({
+            var div_icon_e3aeca0c715897a8556af63214d1912c = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1432,24 +1452,24 @@
 });
         
     
-        var popup_a17513d5d371298afcf3b155289473fb = L.popup({
+        var popup_52759f0b51b0f12d9141f7ddab731d2a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_ee58708db9920936b5b8a4da2554d076 = $(`<div id="html_ee58708db9920936b5b8a4da2554d076" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Raimunda Clementina Barros</b><br><img src="fotos/898182077_raimunda_clementina_barros.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Pessoa importante para a comunidade</i><br>Bairro: Pedrinhas<br>Onde encontrar: Na sede da Associação e na Igreja Assembleia de Deus de Laranjeiras<br><b>Por que é importante:</b> É uma liderança atuante na comunidade, que contribui com as atividades da associação, exerce influência religiosa positiva e é exemplo de superação, dedicação e espírito empreendedor, inspirando outras pessoas com sua iniciativa e compromisso coletivo.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
-                popup_a17513d5d371298afcf3b155289473fb.setContent(html_ee58708db9920936b5b8a4da2554d076);
+                var html_c6b007183b8fa9d193355cd7c02bd45c = $(`<div id="html_c6b007183b8fa9d193355cd7c02bd45c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Raimunda Clementina Barros</b><br><img src="fotos/898182077_raimunda_clementina_barros.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Pessoa importante para a comunidade</i><br>Bairro: Pedrinhas<br>Onde encontrar: Na sede da Associação e na Igreja Assembleia de Deus de Laranjeiras<br><b>Por que é importante:</b> É uma liderança atuante na comunidade, que contribui com as atividades da associação, exerce influência religiosa positiva e é exemplo de superação, dedicação e espírito empreendedor, inspirando outras pessoas com sua iniciativa e compromisso coletivo.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Associação dos Pequenos Produtores Rurais de Laranjeiras</span></div></div>`)[0];
+                popup_52759f0b51b0f12d9141f7ddab731d2a.setContent(html_c6b007183b8fa9d193355cd7c02bd45c);
             
         
 
-        marker_409d2a306dd7ff87a37b88b0bbb36158.bindPopup(popup_a17513d5d371298afcf3b155289473fb)
+        marker_470c066cded9274c0b9736ff4b745c08.bindPopup(popup_52759f0b51b0f12d9141f7ddab731d2a)
         ;
 
         
     
     
-            marker_409d2a306dd7ff87a37b88b0bbb36158.bindTooltip(
+            marker_470c066cded9274c0b9736ff4b745c08.bindTooltip(
                 `<div>
                      Raimunda Clementina Barros — Associação dos Pequenos Produtores Rurais de Laranjeiras
                  </div>`,
@@ -1459,17 +1479,17 @@
             );
         
     
-                marker_409d2a306dd7ff87a37b88b0bbb36158.setIcon(div_icon_3ccc57d12d49060a2fc8b50cb74dab80);
+                marker_470c066cded9274c0b9736ff4b745c08.setIcon(div_icon_e3aeca0c715897a8556af63214d1912c);
             
     
-            var marker_0cd5ced13c5c0ca38b9d1a958fa9eadd = L.marker(
+            var marker_230f42eb388b5a8a12cdabd322275f91 = L.marker(
                 [-2.6700991018983276, -44.283840682147094],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_01034f96d104954145ca96097bf205df = L.divIcon({
+            var div_icon_18df46b8cc4f93bb37ac8c0d4c034da1 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #F2A71D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#F2A71D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1477,24 +1497,24 @@
 });
         
     
-        var popup_909a926d97c9554cbc700514a5286328 = L.popup({
+        var popup_96ed76c53d1e8db3ea71106a5023f230 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_44d10195bd5cdfd0700cab4dd6ef8a1e = $(`<div id="html_44d10195bd5cdfd0700cab4dd6ef8a1e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Joan</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Itapera<br>Onde encontrar: Ela trabalha em um hospital e encontra ele no período da noite, ou no tempo de festejo, durante o dia todo.<br><b>Por que é importante:</b> Ela é referência na Religião Afrodescendente, onde acontece um dos maiores festejos da zona rural de São Luís MA.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Social para Sustentabilidade da Vida Pátio Verde</span></div></div>`)[0];
-                popup_909a926d97c9554cbc700514a5286328.setContent(html_44d10195bd5cdfd0700cab4dd6ef8a1e);
+                var html_85f193b0792268f8b805fa21a56e044a = $(`<div id="html_85f193b0792268f8b805fa21a56e044a" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Joan</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Itapera<br>Onde encontrar: Ela trabalha em um hospital e encontra ele no período da noite, ou no tempo de festejo, durante o dia todo.<br><b>Por que é importante:</b> Ela é referência na Religião Afrodescendente, onde acontece um dos maiores festejos da zona rural de São Luís MA.<br><span style="color:#F2A71D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Social para Sustentabilidade da Vida Pátio Verde</span></div></div>`)[0];
+                popup_96ed76c53d1e8db3ea71106a5023f230.setContent(html_85f193b0792268f8b805fa21a56e044a);
             
         
 
-        marker_0cd5ced13c5c0ca38b9d1a958fa9eadd.bindPopup(popup_909a926d97c9554cbc700514a5286328)
+        marker_230f42eb388b5a8a12cdabd322275f91.bindPopup(popup_96ed76c53d1e8db3ea71106a5023f230)
         ;
 
         
     
     
-            marker_0cd5ced13c5c0ca38b9d1a958fa9eadd.bindTooltip(
+            marker_230f42eb388b5a8a12cdabd322275f91.bindTooltip(
                 `<div>
                      Joan — Instituto Social para Sustentabilidade da Vida Pátio Verde
                  </div>`,
@@ -1504,17 +1524,17 @@
             );
         
     
-                marker_0cd5ced13c5c0ca38b9d1a958fa9eadd.setIcon(div_icon_01034f96d104954145ca96097bf205df);
+                marker_230f42eb388b5a8a12cdabd322275f91.setIcon(div_icon_18df46b8cc4f93bb37ac8c0d4c034da1);
             
     
-            var marker_babf7a109cbeb3bf8d90489ffb35c8f7 = L.marker(
+            var marker_9430a7d20edd3122bd7d6fd2112858ac = L.marker(
                 [-2.5719009597192803, -44.294642269205724],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_b15a436f2eb4841ad616b007e75df550 = L.divIcon({
+            var div_icon_d08fcc2bc17293d23eb2bffdf4f7fe56 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1522,24 +1542,24 @@
 });
         
     
-        var popup_eac2c6731f97944dbc477036a80b9854 = L.popup({
+        var popup_2f7e8ed8d4e9b175f62228d3b0101b3b = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_81a121e23c078842d78757bedaf01160 = $(`<div id="html_81a121e23c078842d78757bedaf01160" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Renato Olliver</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Residencial Paraíso<br><b>Por que é importante:</b> Desenvolve cultura, mobiliza e impulsiona jovens da comunidade.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Rosa Dália</span></div></div>`)[0];
-                popup_eac2c6731f97944dbc477036a80b9854.setContent(html_81a121e23c078842d78757bedaf01160);
+                var html_b3cc2ffbb8d1fc3daa582eecfb86c4b0 = $(`<div id="html_b3cc2ffbb8d1fc3daa582eecfb86c4b0" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Renato Olliver</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Residencial Paraíso<br><b>Por que é importante:</b> Desenvolve cultura, mobiliza e impulsiona jovens da comunidade.<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">Instituto Rosa Dália</span></div></div>`)[0];
+                popup_2f7e8ed8d4e9b175f62228d3b0101b3b.setContent(html_b3cc2ffbb8d1fc3daa582eecfb86c4b0);
             
         
 
-        marker_babf7a109cbeb3bf8d90489ffb35c8f7.bindPopup(popup_eac2c6731f97944dbc477036a80b9854)
+        marker_9430a7d20edd3122bd7d6fd2112858ac.bindPopup(popup_2f7e8ed8d4e9b175f62228d3b0101b3b)
         ;
 
         
     
     
-            marker_babf7a109cbeb3bf8d90489ffb35c8f7.bindTooltip(
+            marker_9430a7d20edd3122bd7d6fd2112858ac.bindTooltip(
                 `<div>
                      Renato Olliver — Instituto Rosa Dália
                  </div>`,
@@ -1549,17 +1569,17 @@
             );
         
     
-                marker_babf7a109cbeb3bf8d90489ffb35c8f7.setIcon(div_icon_b15a436f2eb4841ad616b007e75df550);
+                marker_9430a7d20edd3122bd7d6fd2112858ac.setIcon(div_icon_d08fcc2bc17293d23eb2bffdf4f7fe56);
             
     
-            var marker_a4597ac2ae432ed3197895fe6b660d0e = L.marker(
+            var marker_2ac8d377eca7354c874e4ee82c5223e4 = L.marker(
                 [-2.5591632892414764, -44.306864365012096],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_75e697e9f73ce13a2dd6cebe09c97506 = L.divIcon({
+            var div_icon_33e848248a2d8dca7f1d274d14fc8946 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1567,24 +1587,24 @@
 });
         
     
-        var popup_8f5005daf6a7e7808fcf889116b879de = L.popup({
+        var popup_046c8bfd573c9b28af5616dc74395b72 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_990c1f24cb826ab4a819ffa8e37c0bb0 = $(`<div id="html_990c1f24cb826ab4a819ffa8e37c0bb0" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Pedro Soares Cutrim</b><br><img src="fotos/899753046_pedro_soares_cutrim.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Pessoa importante para a comunidade</i><br>Bairro: Sá Viana<br>Onde encontrar: Igreja Evangélica Congregacional do Sá Viana<br><b>Por que é importante:</b> É um dos fundadores do bairro Sá Viana, morador do bairro há mais de 55 anos. Já foi 2 vezes presidente da União dos Moradores e sempre esteve ajudando a comunidade a conseguir melhores condições e qualidade de vida para o bairro e para as pessoas que moram nele.<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Clube de Mães Nossa Senhora da Vitória</span></div></div>`)[0];
-                popup_8f5005daf6a7e7808fcf889116b879de.setContent(html_990c1f24cb826ab4a819ffa8e37c0bb0);
+                var html_8f3a6044af59ae48cb53d89385e2084d = $(`<div id="html_8f3a6044af59ae48cb53d89385e2084d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Pedro Soares Cutrim</b><br><img src="fotos/899753046_pedro_soares_cutrim.jpg" alt="" loading="lazy" title="Toque para ampliar" onclick="ampliarFoto(this.src)" style="width:100%;max-height:180px;object-fit:cover;border-radius:4px;margin:4px 0;display:block;cursor:zoom-in"><br><i>Pessoa importante para a comunidade</i><br>Bairro: Sá Viana<br>Onde encontrar: Igreja Evangélica Congregacional do Sá Viana<br><b>Por que é importante:</b> É um dos fundadores do bairro Sá Viana, morador do bairro há mais de 55 anos. Já foi 2 vezes presidente da União dos Moradores e sempre esteve ajudando a comunidade a conseguir melhores condições e qualidade de vida para o bairro e para as pessoas que moram nele.<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">Clube de Mães Nossa Senhora da Vitória</span></div></div>`)[0];
+                popup_046c8bfd573c9b28af5616dc74395b72.setContent(html_8f3a6044af59ae48cb53d89385e2084d);
             
         
 
-        marker_a4597ac2ae432ed3197895fe6b660d0e.bindPopup(popup_8f5005daf6a7e7808fcf889116b879de)
+        marker_2ac8d377eca7354c874e4ee82c5223e4.bindPopup(popup_046c8bfd573c9b28af5616dc74395b72)
         ;
 
         
     
     
-            marker_a4597ac2ae432ed3197895fe6b660d0e.bindTooltip(
+            marker_2ac8d377eca7354c874e4ee82c5223e4.bindTooltip(
                 `<div>
                      Pedro Soares Cutrim — Clube de Mães Nossa Senhora da Vitória
                  </div>`,
@@ -1594,17 +1614,17 @@
             );
         
     
-                marker_a4597ac2ae432ed3197895fe6b660d0e.setIcon(div_icon_75e697e9f73ce13a2dd6cebe09c97506);
+                marker_2ac8d377eca7354c874e4ee82c5223e4.setIcon(div_icon_33e848248a2d8dca7f1d274d14fc8946);
             
     
-            var marker_7b1d31c80d657047937cfffaa68a2a1c = L.marker(
+            var marker_301a5a39b4dfd7f20587956f6ff8a529 = L.marker(
                 [-2.5739693739193275, -44.30981665328618],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_cacf19c3da915535347d9b2c39e5f1e2 = L.divIcon({
+            var div_icon_67d31ae26ffafb969e14772f62e1ecb0 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #1D6E96;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#1D6E96;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1612,24 +1632,24 @@
 });
         
     
-        var popup_203e008dbbe4032e04b839ac3bbd9341 = L.popup({
+        var popup_a19df37a40e20a40a0854832bc1b1ed1 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_e61530f161170ec6a8237bcfd4225ad9 = $(`<div id="html_e61530f161170ec6a8237bcfd4225ad9" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Maneco</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila Embratel<br>Onde encontrar: Já falecida<br><b>Por que é importante:</b> Foi um dos primeiros moradores da Vila Embratel. Lutou pelo desenvolvimento da comunidade<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores da Vila Embratel II</span></div></div>`)[0];
-                popup_203e008dbbe4032e04b839ac3bbd9341.setContent(html_e61530f161170ec6a8237bcfd4225ad9);
+                var html_2788a0914fff8cf3e4cfd50ccee6138d = $(`<div id="html_2788a0914fff8cf3e4cfd50ccee6138d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>Maneco</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Vila Embratel<br>Onde encontrar: Já falecida<br><b>Por que é importante:</b> Foi um dos primeiros moradores da Vila Embratel. Lutou pelo desenvolvimento da comunidade<br><span style="color:#1D6E96">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores da Vila Embratel II</span></div></div>`)[0];
+                popup_a19df37a40e20a40a0854832bc1b1ed1.setContent(html_2788a0914fff8cf3e4cfd50ccee6138d);
             
         
 
-        marker_7b1d31c80d657047937cfffaa68a2a1c.bindPopup(popup_203e008dbbe4032e04b839ac3bbd9341)
+        marker_301a5a39b4dfd7f20587956f6ff8a529.bindPopup(popup_a19df37a40e20a40a0854832bc1b1ed1)
         ;
 
         
     
     
-            marker_7b1d31c80d657047937cfffaa68a2a1c.bindTooltip(
+            marker_301a5a39b4dfd7f20587956f6ff8a529.bindTooltip(
                 `<div>
                      Maneco — União dos Moradores da Vila Embratel II
                  </div>`,
@@ -1639,17 +1659,17 @@
             );
         
     
-                marker_7b1d31c80d657047937cfffaa68a2a1c.setIcon(div_icon_cacf19c3da915535347d9b2c39e5f1e2);
+                marker_301a5a39b4dfd7f20587956f6ff8a529.setIcon(div_icon_67d31ae26ffafb969e14772f62e1ecb0);
             
     
-            var marker_f15188740c7ff658ba59beae780a18d9 = L.marker(
+            var marker_dcb76720ec40f808073ef047634e7186 = L.marker(
                 [-2.5588619315734804, -44.307593864704614],
                 {
 }
-            ).addTo(feature_group_0dd49f58c31704d149e1f96b9085ed74);
+            ).addTo(feature_group_9ce97e9a8463c59f21be8f1c694e0063);
         
     
-            var div_icon_740c859621999b8e43e4329ec3112d51 = L.divIcon({
+            var div_icon_74658ce6033f34d932a763e699e4dbd2 = L.divIcon({
   "html": "\u003cdiv style=\"position:relative;width:50px;height:50px\"\u003e\n              \u003cdiv style=\"width:50px;height:50px;border-radius:50%;background:#fff;\n                   border:3px solid #C11F3D;box-shadow:0 1px 5px rgba(0,0,0,.45);\n                   display:flex;align-items:center;justify-content:center;overflow:hidden\"\u003e\n                \u003cimg src=\"logos/RedeProsperidadeFamiliar_Emblema_Positivo.png\" alt=\"\"\n                     style=\"width:88%;height:88%;\n                            object-fit:contain;\"\u003e\n              \u003c/div\u003e\n              \u003cdiv style=\"position:absolute;right:-2px;bottom:-2px;width:21px;height:21px;\n                   border-radius:50%;background:#C11F3D;border:2px solid #fff;color:#fff;\n                   font:bold 15px/17px Arial;text-align:center\"\u003e\u2665\u003c/div\u003e\n            \u003c/div\u003e",
   "iconSize": [50, 50],
   "iconAnchor": [25, 25],
@@ -1657,24 +1677,24 @@
 });
         
     
-        var popup_06e89e8ed8bf426bb06b6a225881b201 = L.popup({
+        var popup_a1ca4963466f384f3c832868a0feb858 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_fdb008a70196021a971ba9a9e165d229 = $(`<div id="html_fdb008a70196021a971ba9a9e165d229" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>joao do sa viana</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Sá Viana<br>Onde encontrar: no ponto final do bairro sá viana, na sua propriedade<br><b>Por que é importante:</b> mestre em cultura e fundador do tambor de crioula criolo do nordeste<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Bairro Sá Viana</span></div></div>`)[0];
-                popup_06e89e8ed8bf426bb06b6a225881b201.setContent(html_fdb008a70196021a971ba9a9e165d229);
+                var html_b16760df56198bb5103abfeacf0412df = $(`<div id="html_b16760df56198bb5103abfeacf0412df" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;width:min(250px,78vw)'><b>joao do sa viana</b><br><i>Pessoa importante para a comunidade</i><br>Bairro: Sá Viana<br>Onde encontrar: no ponto final do bairro sá viana, na sua propriedade<br><b>Por que é importante:</b> mestre em cultura e fundador do tambor de crioula criolo do nordeste<br><span style="color:#C11F3D">&#9679;</span> <span style="font-size:15px;font-weight:bold">União dos Moradores do Bairro Sá Viana</span></div></div>`)[0];
+                popup_a1ca4963466f384f3c832868a0feb858.setContent(html_b16760df56198bb5103abfeacf0412df);
             
         
 
-        marker_f15188740c7ff658ba59beae780a18d9.bindPopup(popup_06e89e8ed8bf426bb06b6a225881b201)
+        marker_dcb76720ec40f808073ef047634e7186.bindPopup(popup_a1ca4963466f384f3c832868a0feb858)
         ;
 
         
     
     
-            marker_f15188740c7ff658ba59beae780a18d9.bindTooltip(
+            marker_dcb76720ec40f808073ef047634e7186.bindTooltip(
                 `<div>
                      joao do sa viana — União dos Moradores do Bairro Sá Viana
                  </div>`,
@@ -1684,30 +1704,30 @@
             );
         
     
-                marker_f15188740c7ff658ba59beae780a18d9.setIcon(div_icon_740c859621999b8e43e4329ec3112d51);
+                marker_dcb76720ec40f808073ef047634e7186.setIcon(div_icon_74658ce6033f34d932a763e699e4dbd2);
             
     
-            feature_group_0dd49f58c31704d149e1f96b9085ed74.addTo(map_959d48e33a57bf895b3e6d91489bbf7f);
+            feature_group_9ce97e9a8463c59f21be8f1c694e0063.addTo(map_4b5c44eaf60db09e9647c55272427deb);
         
     
-            var layer_control_13b9224e0bc7dc39d17b70fa5df0b90a_layers = {
+            var layer_control_e1a575701b42b17a88397d6ebd8f1601_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_be0ff52cd7a50606ec60f04e15277b01,
+                    "openstreetmap" : tile_layer_3f8ba8ca93227c7bf475eebce7ec6f5d,
                 },
                 overlays :  {
-                    "\u2605 Lugares" : feature_group_3e68526b1d02d5f827a306902f8baa1b,
-                    "\u2665 Pessoas" : feature_group_0dd49f58c31704d149e1f96b9085ed74,
+                    "\u2605 Lugares" : feature_group_f4da2ef0e4f9b976da3b707913eaad63,
+                    "\u2665 Pessoas" : feature_group_9ce97e9a8463c59f21be8f1c694e0063,
                 },
             };
-            let layer_control_13b9224e0bc7dc39d17b70fa5df0b90a = L.control.layers(
-                layer_control_13b9224e0bc7dc39d17b70fa5df0b90a_layers.base_layers,
-                layer_control_13b9224e0bc7dc39d17b70fa5df0b90a_layers.overlays,
+            let layer_control_e1a575701b42b17a88397d6ebd8f1601 = L.control.layers(
+                layer_control_e1a575701b42b17a88397d6ebd8f1601_layers.base_layers,
+                layer_control_e1a575701b42b17a88397d6ebd8f1601_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_959d48e33a57bf895b3e6d91489bbf7f);
+            ).addTo(map_4b5c44eaf60db09e9647c55272427deb);
 
         
 </script>
